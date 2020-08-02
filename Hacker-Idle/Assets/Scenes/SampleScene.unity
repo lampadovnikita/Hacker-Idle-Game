@@ -296,12 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f9abe89603d12478d526f8998d5d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data:
-    purchaseCost: -2
-    upgradeCost: -3
-    upgradeCostGrowthRate: -1
-    productionRate: 2
-    productionMultiplier: -213
+  data: {fileID: 11400000, guid: 704f4d6d750208b429cc404326004659, type: 2}
 --- !u!4 &1597183873
 Transform:
   m_ObjectHideFlags: 0
