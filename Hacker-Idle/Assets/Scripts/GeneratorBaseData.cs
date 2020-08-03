@@ -44,17 +44,9 @@ public class GeneratorBaseData : ScriptableObject
 
 	private void OnValidate()
 	{
-		ValidateNonNegative(ref purchaseCost);
-		ValidateNonNegative(ref upgradeCostGrowthRate);
-		ValidateNonNegative(ref baseProductionRate);
-		ValidateNonNegative(ref productionMultiplier);
-	}
-
-	private void ValidateNonNegative(ref float value)
-	{
-		if (value < 0)
-		{
-			value = 0f;
-		}
+		Validator.ValidateNonNegative(ref purchaseCost);
+		Validator.ValidateNonNegative(ref upgradeCostGrowthRate);
+		Validator.ValidateNonNegative(ref baseProductionRate);
+		Validator.ValidateNonNegative(ref productionMultiplier);
 	}
 }
