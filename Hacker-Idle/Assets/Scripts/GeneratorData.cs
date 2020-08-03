@@ -135,7 +135,7 @@ public class GeneratorData : ScriptableObject
 		baseProductionRate = productionRate;
 	}
 
-	public bool isPurchased()
+	public bool IsPurchased()
 	{
 		if (Level == 0)
 		{
