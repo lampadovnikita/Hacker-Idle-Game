@@ -11,7 +11,7 @@ public class GeneratorBehavior : MonoBehaviour
 
 	private void Start()
 	{
-		if (data.Level > 0)
+		if (data.IsPurchased() == true)
 		{
 			StartCoroutine(ProduceLoopCoroutine());
 		}
