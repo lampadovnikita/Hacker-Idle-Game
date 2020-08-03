@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu]
 public class GeneratorData : ScriptableObject
 {
+	private static String NEGATIVE_VALUE_EXCEPTION_MESSAGE = "The value must be non-negative!";
+
 	[SerializeField]
 	private float purchaseCost;
 
@@ -23,27 +25,112 @@ public class GeneratorData : ScriptableObject
 
 	private int level;
 
-	public float PurchaseCost { get => purchaseCost; }
+#region Properties
 
-	public float UpgradeCostGrowthRate { get => upgradeCostGrowthRate; set => upgradeCostGrowthRate = value; }
+	public float PurchaseCost
+	{
+		get => purchaseCost;
+	}
 
-	public float ProductionRate { get => productionRate; set => productionRate = value; }
+	public float UpgradeCostGrowthRate
+	{
+		get => upgradeCostGrowthRate;
 
-	public float ProductionMultiplier { get => productionMultiplier; set => productionMultiplier = value; }
+		set
+		{
+			if (value < 0)
+			{
+				throw new ArgumentOutOfRangeException("upgradeCostGrowthRate", NEGATIVE_VALUE_EXCEPTION_MESSAGE);
+			}
+			else
+			{
+				upgradeCostGrowthRate = value;
+			}
+		}
+	}
 
-	public float UpgradeCost { get => upgradeCost; set => upgradeCost = value; }
+	public float ProductionRate
+	{
+		get => productionRate;
 
-	public float BaseProductionRate { get => baseProductionRate; }
+		set
+		{
+			if (value < 0)
+			{
+				throw new ArgumentOutOfRangeException("productionRate", NEGATIVE_VALUE_EXCEPTION_MESSAGE);
+			}
+			else
+			{
+				productionRate = value;
+			}
+		}
+	}
 
-	public int Level { get => level; set => level = value; }
+	public float ProductionMultiplier
+	{
+		get => productionMultiplier;
+
+		set
+		{
+			if (value < 0)
+			{
+				throw new ArgumentOutOfRangeException("productionMultiplier", NEGATIVE_VALUE_EXCEPTION_MESSAGE);
+			}
+			else
+			{
+				productionMultiplier = value;
+			}
+		}
+	}
+
+	public float UpgradeCost
+	{
+		get => upgradeCost;
+
+		set
+		{
+			if (value < 0)
+			{
+				throw new ArgumentOutOfRangeException("upgradeCost", NEGATIVE_VALUE_EXCEPTION_MESSAGE);
+			}
+			else
+			{
+				upgradeCost = value;
+			}
+		}
+	}
+
+	public float BaseProductionRate
+	{
+		get => baseProductionRate;
+	}
+
+	public int Level
+	{
+		get => level;
+
+		set
+		{
+			if (value < 0)
+			{
+				throw new ArgumentOutOfRangeException("level", NEGATIVE_VALUE_EXCEPTION_MESSAGE);
+			}
+			else
+			{
+				level = value;
+			}
+		}
+	}
+
+	#endregion
 
 	private void OnValidate()
 	{
 		ValidateNonNegative(ref purchaseCost);
-		ValidateNonNegative(ref upgradeCost);
 		ValidateNonNegative(ref upgradeCostGrowthRate);
 		ValidateNonNegative(ref productionRate);
 		ValidateNonNegative(ref productionMultiplier);
+		ValidateNonNegative(ref upgradeCost);
 
 		baseProductionRate = productionRate;
 	}
