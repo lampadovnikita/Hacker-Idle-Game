@@ -1,11 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu]
 public class GeneratorBaseData : ScriptableObject
 {
-	private static String NEGATIVE_VALUE_EXCEPTION_MESSAGE = "The value must be non-negative!";
-
 	[SerializeField]
 	private float purchaseCost;
 
