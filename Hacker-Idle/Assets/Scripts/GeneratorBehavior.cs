@@ -11,7 +11,7 @@ public class GeneratorBehavior : MonoBehaviour
 
 	private void Start()
 	{
-		Upgrade();
+		data.Level = 1;
 
 		if (data.IsPurchased() == true)
 		{
