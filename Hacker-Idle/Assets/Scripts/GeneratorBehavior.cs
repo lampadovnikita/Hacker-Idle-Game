@@ -43,7 +43,7 @@ public class GeneratorBehavior : MonoBehaviour
 
 			Debug.Log(gameObject.name + " produce " + data.ProductionRate + " CU");
 
-			OnProduce.Invoke(data.ProductionRate);
+			OnProduce?.Invoke(data.ProductionRate);
 		}
 	}
 }
