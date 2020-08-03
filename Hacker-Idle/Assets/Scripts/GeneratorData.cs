@@ -1,9 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
-
-[CreateAssetMenu]
-public class GeneratorData : ScriptableObject
+[Serializable]
+public class GeneratorData
 {
 	private static String NEGATIVE_VALUE_EXCEPTION_MESSAGE = "The value must be non-negative!";
 
