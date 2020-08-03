@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
-	public delegate void Produce(float producedNum);
-	public event Produce OnProduce;
+	public delegate void Produced(float producedNum);
+	public event Produced OnProduced;
 
 	public delegate void Upgraded(Generator sender);
 	public event Upgraded OnUpgraded;
@@ -70,7 +70,7 @@ public class Generator : MonoBehaviour
 
 			Debug.Log(gameObject.name + " produce " + productionRate + " CU");
 
-			OnProduce?.Invoke(productionRate);
+			OnProduced?.Invoke(productionRate);
 		}
 	}
 
