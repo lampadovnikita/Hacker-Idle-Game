@@ -27,6 +27,11 @@ public class Generator : MonoBehaviour
 		}
 	}
 
+	private void OnValidate()
+	{
+		Validator.ValidateNonNegative(ref level);
+	}
+
 	public void Upgrade()
 	{
 		level++;

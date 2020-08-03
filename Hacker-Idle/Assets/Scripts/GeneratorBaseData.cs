@@ -19,27 +19,13 @@ public class GeneratorBaseData : ScriptableObject
 	private float productionMultiplier;
 
 	#region Properties
+	public float PurchaseCost => purchaseCost;
 
-	public float PurchaseCost
-	{
-		get => purchaseCost;
-	}
+	public float UpgradeCostGrowthRate => upgradeCostGrowthRate;
 
-	public float UpgradeCostGrowthRate
-	{
-		get => upgradeCostGrowthRate;
-	}
+	public float ProductionMultiplier => productionMultiplier;
 
-	public float ProductionMultiplier
-	{
-		get => productionMultiplier;
-	}
-
-	public float BaseProductionRate
-	{
-		get => baseProductionRate;
-	}
-
+	public float BaseProductionRate => baseProductionRate;
 	#endregion
 
 	private void OnValidate()
