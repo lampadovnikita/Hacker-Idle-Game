@@ -4,16 +4,16 @@
 public class GeneratorBaseData : ScriptableObject
 {
 	[SerializeField]
-	private float purchaseCost;
+	private float purchaseCost = 1f;
 
 	[SerializeField]
-	private float upgradeCostGrowthRate;
+	private float upgradeCostGrowthRate = 1f;
 
 	[SerializeField]
-	private float baseProductionRate;
+	private float baseProductionRate = 1f;
 
 	[SerializeField]
-	private float productionMultiplier;
+	private float productionMultiplier = 1f;
 
 	#region Properties
 	public float PurchaseCost => purchaseCost;
