@@ -39,6 +39,8 @@ public class GeneratorBehavior : MonoBehaviour
 		{
 			yield return new WaitForSeconds(1f);
 
+			Debug.Log(gameObject.name + " produce " + data.ProductionRate + " CU");
+
 			OnProduce.Invoke(data.ProductionRate);
 		}
 	}
