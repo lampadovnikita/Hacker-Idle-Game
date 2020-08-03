@@ -6,6 +6,9 @@ public class Generator : MonoBehaviour
 	public delegate void Produce(float producedNum);
 	public event Produce OnProduce;
 
+	public delegate void Upgraded(Generator sender);
+	public event Upgraded OnUpgraded;
+
 	[SerializeField]
 	private GeneratorBaseData data = default;
 
@@ -55,6 +58,8 @@ public class Generator : MonoBehaviour
 			productionRate = data.BaseProductionRate;
 			StartCoroutine(ProduceLoopCoroutine());
 		}
+
+		OnUpgraded?.Invoke(this);
 	}
 
 	private IEnumerator ProduceLoopCoroutine()
