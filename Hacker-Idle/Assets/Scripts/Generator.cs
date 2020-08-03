@@ -16,6 +16,14 @@ public class Generator : MonoBehaviour
 
 	private float productionRate;
 
+	#region Properties
+	public int Level => level;
+
+	public float UpgradeCost => upgradeCost;
+
+	public float ProductionRate => productionRate;
+	#endregion
+
 	private void Start()
 	{
 		InitializeProductionRate();
