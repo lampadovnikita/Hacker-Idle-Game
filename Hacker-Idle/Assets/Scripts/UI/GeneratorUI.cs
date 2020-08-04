@@ -12,6 +12,9 @@ public class GeneratorUI : MonoBehaviour
 	[SerializeField]
 	private TextMeshProUGUI productionRateUGUI = default;
 
+	[SerializeField]
+	private TextMeshProUGUI levelUGUI = default;
+
 	private void Start()
 	{
 		generator.OnUpgraded += OnGeneratorUpgraded;
@@ -33,5 +36,6 @@ public class GeneratorUI : MonoBehaviour
 	{
 		upgradeCostUGUI.text = generator.UpgradeCost.ToString();
 		productionRateUGUI.text = generator.ProductionRate.ToString();
+		levelUGUI.text = generator.Level.ToString();
 	}
 }
