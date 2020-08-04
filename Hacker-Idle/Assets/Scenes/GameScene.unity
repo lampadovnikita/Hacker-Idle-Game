@@ -130,6 +130,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 87234051}
     m_Modifications:
+    - target: {fileID: 1492990776290474376, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492990776290474376, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492990776290474376, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492990776290474376, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492990776290474376, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3871965942106727109, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_textInfo.characterCount
       value: 0
@@ -238,6 +258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Generator List item 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3871965943243758325, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3871965943335129974, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_textInfo.characterCount
       value: 0
@@ -254,6 +278,10 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3871965943335129975, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3871965943995453830, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_textInfo.characterCount
       value: 0
@@ -269,6 +297,14 @@ PrefabInstance:
     - target: {fileID: 3871965943995453830, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106297827746330371, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106297827746330371, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.12313843
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
@@ -562,6 +598,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: fe6896eea6903804f944708b71d3fce5, type: 2}
+    - target: {fileID: 4910789463967859543, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: fe6896eea6903804f944708b71d3fce5, type: 2}
     - target: {fileID: 4910789463967859624, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_Name
       value: Sample Generator 2
@@ -670,7 +710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.93553245}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.14993286}
+  m_AnchoredPosition: {x: 0, y: 0.14990234}
   m_SizeDelta: {x: 0, y: -0.29990005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504595187
@@ -835,7 +875,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24730931, y: 0}
   m_AnchorMax: {x: 0.75087285, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0000019073486}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1962742898
@@ -972,6 +1012,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 87234051}
     m_Modifications:
+    - target: {fileID: 1492990776290474376, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492990776290474376, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492990776290474376, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492990776290474376, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492990776290474376, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253136, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: generator
       value: 
@@ -1064,6 +1124,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Generator List item 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3871965943243758325, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871965943335129975, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106297827746330371, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106297827746330371, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.12313843
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
 --- !u!1001 &4910789464558277847
@@ -1125,6 +1201,10 @@ PrefabInstance:
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4910789463967859543, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 43c9ca81b6c5f62488e1f74d5b57b740, type: 2}
     - target: {fileID: 4910789463967859624, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_Name
       value: Sample Generator 1
