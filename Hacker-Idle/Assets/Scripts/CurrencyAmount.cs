@@ -37,7 +37,7 @@ public class CurrencyAmount : MonoBehaviour
 		}
 	}
 
-	public void OnGeneratorProduced(float producedAmount)
+	private void OnGeneratorProduced(float producedAmount)
 	{
 		amount += producedAmount;
 
