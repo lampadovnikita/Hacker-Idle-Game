@@ -10,7 +10,7 @@ public class Generator : MonoBehaviour
 	public event Upgraded OnUpgraded;
 
 	[SerializeField]
-	private GeneratorBaseData data = default;
+	private GeneratorBaseData baseData = default;
 
 	[SerializeField]
 	private int level = 0;
@@ -50,15 +50,15 @@ public class Generator : MonoBehaviour
 	{
 		level++;
 
-		upgradeCost *= data.UpgradeCostGrowthRate;
+		upgradeCost *= baseData.UpgradeCostGrowthRate;
 
 		if (level > 1)
 		{
-			productionRate += data.BaseProductionRate * data.ProductionMultiplier;
+			productionRate += baseData.BaseProductionRate * baseData.ProductionMultiplier;
 		}
 		else if (level == 1)
 		{
-			productionRate = data.BaseProductionRate;
+			productionRate = baseData.BaseProductionRate;
 			StartCoroutine(ProduceLoopCoroutine());
 		}
 
@@ -93,11 +93,11 @@ public class Generator : MonoBehaviour
 	{
 		if (level == 1)
 		{
-			productionRate = data.BaseProductionRate;
+			productionRate = baseData.BaseProductionRate;
 		}
 		else
 		{
-			productionRate = data.BaseProductionRate + data.BaseProductionRate * data.ProductionMultiplier * (level - 1);
+			productionRate = baseData.BaseProductionRate + baseData.BaseProductionRate * baseData.ProductionMultiplier * (level - 1);
 		}
 	}
 
@@ -105,11 +105,11 @@ public class Generator : MonoBehaviour
 	{
 		if (IsPurchased() == true)
 		{
-			upgradeCost = data.PurchaseCost * Mathf.Pow(data.UpgradeCostGrowthRate, level);
+			upgradeCost = baseData.PurchaseCost * Mathf.Pow(baseData.UpgradeCostGrowthRate, level);
 		}
 		else
 		{
-			upgradeCost = data.PurchaseCost;
+			upgradeCost = baseData.PurchaseCost;
 		}
 	}
 }
