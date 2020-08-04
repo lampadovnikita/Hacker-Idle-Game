@@ -15,6 +15,8 @@ public class Generator : MonoBehaviour
 	[SerializeField]
 	private int level = 0;
 
+	private CurrencyAmount currencyAmount;
+
 	private float upgradeCost;
 
 	private float productionRate;
@@ -35,6 +37,8 @@ public class Generator : MonoBehaviour
 
 	private void Start()
 	{
+		currencyAmount = CurrencyAmount.Instance;
+
 		if (IsPurchased() == true)
 		{
 			StartCoroutine(ProduceLoopCoroutine());

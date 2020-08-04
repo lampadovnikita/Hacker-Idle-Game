@@ -34,7 +34,12 @@ public class GeneratorUI : MonoBehaviour
 
 	public void OnUpgradeButtonPressed()
 	{
-		generator.Upgrade();
+		bool isWritedOff = currencyAmount.AttemptWriteOff(generator.UpgradeCost);
+
+		if (isWritedOff == true)
+		{
+			generator.Upgrade();
+		}
 	}
 
 	private void OnGeneratorUpgraded(Generator senderGenerator)
