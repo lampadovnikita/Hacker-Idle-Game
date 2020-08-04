@@ -14,7 +14,9 @@ public class GeneratorUI : MonoBehaviour
 
 	private void Start()
 	{
-		generator.OnUpgraded += OnGeneratorUpgraded;	
+		generator.OnUpgraded += OnGeneratorUpgraded;
+
+		UpdateGeneratorInfoUI();
 	}
 
 	public void OnUpgradeButtonPressed()
@@ -24,7 +26,12 @@ public class GeneratorUI : MonoBehaviour
 
 	public void OnGeneratorUpgraded(Generator senderGenerator)
 	{
-		upgradeCostUGUI.text = senderGenerator.UpgradeCost.ToString();
-		productionRateUGUI.text = senderGenerator.ProductionRate.ToString();
+		UpdateGeneratorInfoUI();
+	}
+
+	private void UpdateGeneratorInfoUI()
+	{
+		upgradeCostUGUI.text = generator.UpgradeCost.ToString();
+		productionRateUGUI.text = generator.ProductionRate.ToString();
 	}
 }
