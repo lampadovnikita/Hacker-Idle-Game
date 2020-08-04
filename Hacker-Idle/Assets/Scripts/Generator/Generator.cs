@@ -27,11 +27,14 @@ public class Generator : MonoBehaviour
 	public float ProductionRate => productionRate;
 	#endregion
 
-	private void Start()
+	private void Awake()
 	{
 		InitializeProductionRate();
 		InitializeUpgradeCost();
+	}
 
+	private void Start()
+	{
 		if (IsPurchased() == true)
 		{
 			StartCoroutine(ProduceLoopCoroutine());
