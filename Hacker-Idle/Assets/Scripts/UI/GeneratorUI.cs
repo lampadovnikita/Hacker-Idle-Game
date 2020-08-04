@@ -27,7 +27,7 @@ public class GeneratorUI : MonoBehaviour
 		generator.Upgrade();
 	}
 
-	public void OnGeneratorUpgraded(Generator senderGenerator)
+	private void OnGeneratorUpgraded(Generator senderGenerator)
 	{
 		UpdateGeneratorInfoUI();
 	}
