@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generator: {fileID: 0}
+  upgradeButton: {fileID: 3871965943243758324}
   upgradeCostUGUI: {fileID: 3871965942106727109}
   productionRateUGUI: {fileID: 3871965943995453830}
   levelUGUI: {fileID: 1492990776290474376}

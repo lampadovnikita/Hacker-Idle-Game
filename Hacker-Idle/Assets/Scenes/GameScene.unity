@@ -258,9 +258,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Generator List item 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3871965943243758324, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3871965943243758325, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871965943243758326, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3871965943335129974, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_textInfo.characterCount

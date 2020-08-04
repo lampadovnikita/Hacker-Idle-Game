@@ -37,6 +37,33 @@ public class CurrencyAmount : MonoBehaviour
 		}
 	}
 
+	public bool AttemptWriteOff(float amountToWriteOff)
+	{
+		if (CanWriteOff(amountToWriteOff) == true)
+		{
+			amount -= amountToWriteOff;
+			OnAmountChanged?.Invoke();
+
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public bool CanWriteOff(float amountToWriteOff)
+	{
+		if (amount - amountToWriteOff > 0f)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	private void OnGeneratorProduced(float producedAmount)
 	{
 		amount += producedAmount;
