@@ -29,7 +29,7 @@ public class GeneratorUI : MonoBehaviour
 		generator.OnUpgraded += OnGeneratorUpgraded;
 
 		UpdateGeneratorInfoUI();
-		UpdateUpgradeButtonIntactability();
+		UpdateUpgradeButtonInteractability();
 	}
 
 	public void OnUpgradeButtonPressed()
@@ -49,7 +49,7 @@ public class GeneratorUI : MonoBehaviour
 
 	private void OnMoneyAmountChanged()
 	{
-		UpdateUpgradeButtonIntactability();
+		UpdateUpgradeButtonInteractability();
 	}
 
 	private void UpdateGeneratorInfoUI()
@@ -59,7 +59,7 @@ public class GeneratorUI : MonoBehaviour
 		levelUGUI.text = generator.Level.ToString();
 	}
 
-	private void UpdateUpgradeButtonIntactability()
+	private void UpdateUpgradeButtonInteractability()
 	{
 		if (HasEnoughMoney() == true)
 		{
