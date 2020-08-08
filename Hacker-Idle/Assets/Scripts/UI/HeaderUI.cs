@@ -6,23 +6,23 @@ public class HeaderUI : MonoBehaviour
 	[SerializeField]
 	private TextMeshProUGUI currencyAmountUGUI = default;
 
-	private CurrencyAmount currencyAmount;
+	[SerializeField]
+	private FloatBasedMoney primaryMoney = default;
 
 	private void Start()
 	{
-		currencyAmount = CurrencyAmount.Instance;
-		currencyAmount.OnAmountChanged += OnCurrencyAmountChanged;
+		primaryMoney.OnAmountChanged += OnPrimaryMoneyAmountChanged;
 
 		UpdateAmountUI();
 	}
 
-	private void OnCurrencyAmountChanged()
+	private void OnPrimaryMoneyAmountChanged()
 	{
 		UpdateAmountUI();
 	}
 
 	private void UpdateAmountUI()
 	{
-		currencyAmountUGUI.text = currencyAmount.Amount.ToString();
+		currencyAmountUGUI.text = primaryMoney.Amount.ToString();
 	}
 }

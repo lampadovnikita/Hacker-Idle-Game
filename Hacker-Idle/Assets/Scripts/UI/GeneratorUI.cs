@@ -19,12 +19,12 @@ public class GeneratorUI : MonoBehaviour
 	[SerializeField]
 	private TextMeshProUGUI levelUGUI = default;
 
-	private CurrencyAmount currencyAmount;
+	[SerializeField]
+	private FloatBasedMoney moneySource;
 
 	private void Start()
 	{
-		currencyAmount = CurrencyAmount.Instance;
-		currencyAmount.OnAmountChanged += OnCurrencyAmountChanged;
+		moneySource.OnAmountChanged += OnMoneyAmountChanged;
 
 		generator.OnUpgraded += OnGeneratorUpgraded;
 
@@ -34,7 +34,7 @@ public class GeneratorUI : MonoBehaviour
 
 	public void OnUpgradeButtonPressed()
 	{
-		bool isWritedOff = currencyAmount.AttemptWriteOff(generator.UpgradeCost);
+		bool isWritedOff = moneySource.AttemptWriteOff(generator.UpgradeCost);
 
 		if (isWritedOff == true)
 		{
@@ -47,7 +47,7 @@ public class GeneratorUI : MonoBehaviour
 		UpdateGeneratorInfoUI();
 	}
 
-	private void OnCurrencyAmountChanged()
+	private void OnMoneyAmountChanged()
 	{
 		UpdateUpgradeButtonIntactability();
 	}
@@ -61,13 +61,25 @@ public class GeneratorUI : MonoBehaviour
 
 	private void UpdateUpgradeButtonIntactability()
 	{
-		if (currencyAmount.CanWriteOff(generator.UpgradeCost) == true)
+		if (HasEnoughMoney() == true)
 		{
 			upgradeButton.interactable = true;
 		}
 		else
 		{
 			upgradeButton.interactable = false;
+		}
+	}
+
+	private bool HasEnoughMoney()
+	{
+		if (moneySource.Amount > generator.UpgradeCost)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
 		}
 	}
 }
