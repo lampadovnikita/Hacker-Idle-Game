@@ -20,7 +20,7 @@ public class GeneratorUI : MonoBehaviour
 	private TextMeshProUGUI levelUGUI = default;
 
 	[SerializeField]
-	private FloatBasedMoney moneySource;
+	private FloatBasedMoney moneySource = default;
 
 	private void Start()
 	{
