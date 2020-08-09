@@ -7,10 +7,10 @@ public abstract class Money<T> : MonoBehaviour where T : IComparable<T>
 	public event AmountChanged OnAmountChanged;
 
 	[SerializeField]
-	private MoneyBaseData baseData;
+	private MoneyBaseData baseData = default;
 
 	[SerializeField]
-	private T initialAmount;
+	private T initialAmount = default;
 
 	private T amount;
 
