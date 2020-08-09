@@ -26,8 +26,6 @@ public class GeneratorUI : MonoBehaviour
 	{
 		moneySource.OnAmountChanged += OnMoneyAmountChanged;
 
-		generator.OnUpgraded += OnGeneratorUpgraded;
-
 		UpdateGeneratorInfoUI();
 		UpdateUpgradeButtonInteractability();
 	}
@@ -39,12 +37,8 @@ public class GeneratorUI : MonoBehaviour
 		if (isWritedOff == true)
 		{
 			generator.Upgrade();
+			UpdateGeneratorInfoUI();
 		}
-	}
-
-	private void OnGeneratorUpgraded(Generator senderGenerator)
-	{
-		UpdateGeneratorInfoUI();
 	}
 
 	private void OnMoneyAmountChanged()
