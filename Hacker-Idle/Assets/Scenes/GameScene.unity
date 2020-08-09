@@ -170,6 +170,10 @@ PrefabInstance:
       propertyPath: generator
       value: 
       objectReference: {fileID: 2029046330}
+    - target: {fileID: 3871965942934253136, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: moneySource
+      value: 
+      objectReference: {fileID: 1587204077}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -990,6 +994,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 733274359923524284, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}
+      propertyPath: initialAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 733274359923524285, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1072,6 +1080,10 @@ PrefabInstance:
       propertyPath: generator
       value: 
       objectReference: {fileID: 1597183872}
+    - target: {fileID: 3871965942934253136, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: moneySource
+      value: 
+      objectReference: {fileID: 1587204077}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

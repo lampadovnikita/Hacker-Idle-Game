@@ -209,7 +209,7 @@ MonoBehaviour:
   upgradeCostUGUI: {fileID: 3871965942106727109}
   productionRateUGUI: {fileID: 3871965943995453830}
   levelUGUI: {fileID: 1492990776290474376}
-  moneySource: {fileID: 733274359923524284, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}
+  moneySource: {fileID: 0}
 --- !u!1 &3871965943243758326
 GameObject:
   m_ObjectHideFlags: 0

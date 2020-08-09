@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseData: {fileID: 11400000, guid: 09c35c55196011640a9dba7a701de36f, type: 2}
-  initialAmount: 2.5
+  initialAmount: 0
