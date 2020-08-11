@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
-	public delegate void Produced(float producedNum);
+	public delegate void Produced(float producedAmount);
 	public event Produced OnProduced;
 
 	public delegate void Upgraded(Generator sender);
