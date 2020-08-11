@@ -17,8 +17,8 @@ public class GeneratorProductionMediator : MonoBehaviour
 		}
 	}
 
-	private void OnGeneratorProduced(float prodecedAmount)
+	private void OnGeneratorProduced(float producedAmount)
 	{
-		moneyPurse.Deposit(prodecedAmount);
+		moneyPurse.Deposit(producedAmount);
 	}
 }
