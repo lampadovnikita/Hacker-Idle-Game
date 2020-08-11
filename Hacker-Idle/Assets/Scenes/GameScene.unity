@@ -707,6 +707,7 @@ GameObject:
   - component: {fileID: 1504595188}
   - component: {fileID: 1504595187}
   - component: {fileID: 1504595189}
+  - component: {fileID: 1504595190}
   m_Layer: 5
   m_Name: Header Resources info
   m_TagString: Untagged
@@ -784,8 +785,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583f4c615c459b349b4e01f8d7f7f227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currencyAmountUGUI: {fileID: 1962742898}
-  primaryMoney: {fileID: 1587204077}
+  primaryMoneyAmountUGUI: {fileID: 1962742898}
+--- !u!114 &1504595190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504595185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f05f58194758240aef478e4ffa59bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headerUI: {fileID: 1504595189}
+  primaryMoneySource: {fileID: 1587204077}
 --- !u!850595691 &1514517667
 LightingSettings:
   m_ObjectHideFlags: 0
