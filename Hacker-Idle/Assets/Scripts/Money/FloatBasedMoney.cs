@@ -9,21 +9,21 @@ public class FloatBasedMoney : Money<float>
 	public static string ToString(float amount)
 	{
 		int exp = Mathf.FloorToInt(Mathf.Log10(Mathf.Abs(amount)));
-
+		int metricOrder = exp / EXP_PER_METRIC;
 		string prefix = "";
 
-		if (exp >= 0)
+		if (metricOrder >= 0)
 		{
-			if (exp < METRIC_PREFIXES.Length * EXP_PER_METRIC)
+			if (metricOrder < METRIC_PREFIXES.Length)
 			{
-				prefix = METRIC_PREFIXES[exp / EXP_PER_METRIC];
+				prefix = METRIC_PREFIXES[metricOrder];
 			}
 			else
 			{
-				exp = (METRIC_PREFIXES.Length - 1) * EXP_PER_METRIC;
+				metricOrder = METRIC_PREFIXES.Length - 1;
 				prefix = METRIC_PREFIXES[METRIC_PREFIXES.Length - 1];
 			}
-			amount /= Mathf.Pow(10f, exp);
+			amount /= Mathf.Pow(10f, metricOrder * EXP_PER_METRIC);
 		}
 
 		return string.Format("{0:F5}{1}", amount, prefix);
