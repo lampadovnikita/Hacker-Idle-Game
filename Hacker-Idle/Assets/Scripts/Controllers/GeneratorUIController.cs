@@ -34,7 +34,7 @@ public class GeneratorUIController : MonoBehaviour
 	{
 		generatorUI.SetUpgradeCostText(FloatBasedMoney.ToString(generator.UpgradeCost));
 		generatorUI.SetProductionRateText(FloatBasedMoney.ToString(generator.ProductionRate));
-		generatorUI.SetLevelText(FloatBasedMoney.ToString(generator.Level));
+		generatorUI.SetLevelText(generator.Level.ToString());
 	}
 
 	private void OnMoneyAmountChanged()
