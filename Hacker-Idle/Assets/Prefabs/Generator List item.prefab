@@ -95,7 +95,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 23.9
+  m_fontSize: 23.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -163,6 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3871965942934253137}
   - component: {fileID: 3871965942934253136}
+  - component: {fileID: 5570389750213974011}
   m_Layer: 5
   m_Name: Generator List item
   m_TagString: Untagged
@@ -204,11 +205,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d75313c40353bbf45b2ce4b97afb6260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generator: {fileID: 0}
   upgradeButton: {fileID: 3871965943243758324}
   upgradeCostUGUI: {fileID: 3871965942106727109}
   productionRateUGUI: {fileID: 3871965943995453830}
   levelUGUI: {fileID: 1492990776290474376}
+--- !u!114 &5570389750213974011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3871965942934253138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba825e9aecbcd24fba9b2154e06b3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generatorUI: {fileID: 3871965942934253136}
+  generator: {fileID: 0}
   moneySource: {fileID: 0}
 --- !u!1 &3871965943243758326
 GameObject:
@@ -330,8 +344,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3871965942934253136}
-        m_TargetAssemblyTypeName: GeneratorUI, Assembly-CSharp
+      - m_Target: {fileID: 5570389750213974011}
+        m_TargetAssemblyTypeName: GeneratorUIController, Assembly-CSharp
         m_MethodName: OnUpgradeButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -437,7 +451,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 29.05
+  m_fontSize: 28.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -590,7 +604,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 29.05
+  m_fontSize: 28.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
