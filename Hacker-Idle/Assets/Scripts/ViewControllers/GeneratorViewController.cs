@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class GeneratorUIController : MonoBehaviour
+public class GeneratorViewController : MonoBehaviour
 {
 	[SerializeField]
 	private GeneratorView generatorUI = default;
