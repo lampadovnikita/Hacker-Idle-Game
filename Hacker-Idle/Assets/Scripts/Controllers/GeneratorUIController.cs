@@ -3,7 +3,7 @@
 public class GeneratorUIController : MonoBehaviour
 {
 	[SerializeField]
-	private GeneratorUI generatorUI = default;
+	private GeneratorView generatorUI = default;
 
 	[SerializeField]
 	private Generator generator = default;

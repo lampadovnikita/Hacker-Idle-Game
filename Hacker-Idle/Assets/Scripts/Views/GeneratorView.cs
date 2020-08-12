@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GeneratorUI : MonoBehaviour
+public class GeneratorView : MonoBehaviour
 {
 	[SerializeField]
 	private Button upgradeButton = default;

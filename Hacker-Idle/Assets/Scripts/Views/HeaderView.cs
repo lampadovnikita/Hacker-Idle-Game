@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class HeaderUI : MonoBehaviour
+public class HeaderView : MonoBehaviour
 {
 	[SerializeField]
 	private TextMeshProUGUI primaryMoneyAmountUGUI = default;

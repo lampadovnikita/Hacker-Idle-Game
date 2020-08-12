@@ -3,7 +3,7 @@
 public class HeaderUIController : MonoBehaviour
 {
 	[SerializeField]
-	private HeaderUI headerUI = default;
+	private HeaderView headerUI = default;
 
 	[SerializeField]
 	private FloatBasedMoney primaryMoneySource = default;
