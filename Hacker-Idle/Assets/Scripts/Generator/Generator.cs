@@ -17,9 +17,14 @@ public class Generator : MonoBehaviour
 
 	private float upgradeCost;
 
+	// Production per 1 second
 	private float productionRate;
 
+	// Time of production duration
 	private float productionTime;
+
+	// Production per second * duration
+	private float productionAmount;
 
 	#region Properties
 	public int Level => level;
@@ -29,6 +34,8 @@ public class Generator : MonoBehaviour
 	public float ProductionRate => productionRate;
 
 	public float ProductionTime => productionTime;
+
+	public float ProductionAmount => productionAmount;
 	#endregion
 
 	private void Awake()
@@ -36,6 +43,8 @@ public class Generator : MonoBehaviour
 		InitializeProductionRate();
 		InitializeUpgradeCost();
 		InitializeProductionTime();
+
+		UpdateProductionAmount();
 	}
 
 	private void Start()
@@ -67,6 +76,8 @@ public class Generator : MonoBehaviour
 			StartCoroutine(ProduceLoopCoroutine());
 		}
 
+		UpdateProductionAmount();
+
 		OnUpgraded?.Invoke(this);
 	}
 
@@ -78,7 +89,7 @@ public class Generator : MonoBehaviour
 
 			Debug.Log(gameObject.name + " produce " + productionRate + " CU");
 
-			OnProduced?.Invoke(productionRate);
+			OnProduced?.Invoke(productionAmount);
 		}
 	}
 
@@ -122,5 +133,10 @@ public class Generator : MonoBehaviour
 	private void InitializeProductionTime()
 	{
 		productionTime = baseData.ProductionTime;
+	}
+
+	private void UpdateProductionAmount()
+	{
+		productionAmount = productionRate * productionTime;
 	}
 }
