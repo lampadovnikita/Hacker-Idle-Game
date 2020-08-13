@@ -15,4 +15,5 @@ MonoBehaviour:
   purchaseCost: 3.7
   upgradeCostGrowthRate: 1.07
   baseProductionRate: 1.6
+  productionTime: 0.9
   productionMultiplier: 1
