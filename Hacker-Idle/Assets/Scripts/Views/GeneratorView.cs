@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class GeneratorView : MonoBehaviour
 {
-	private const float MIN_VALUE = 0f;
-
 	[SerializeField]
 	private Button upgradeButton = default;
 

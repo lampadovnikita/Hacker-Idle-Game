@@ -102,7 +102,8 @@ public class Generator : MonoBehaviour
 		}
 		else
 		{
-			productionRate = baseData.BaseProductionRate + baseData.BaseProductionRate * baseData.ProductionMultiplier * (level - 1);
+			productionRate = baseData.BaseProductionRate +
+				baseData.BaseProductionRate * baseData.ProductionMultiplier * (level - 1);
 		}
 	}
 
