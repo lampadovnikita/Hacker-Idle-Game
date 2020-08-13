@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f05f58194758240aef478e4ffa59bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headerUI: {fileID: 1504595189}
+  headerView: {fileID: 1504595189}
   primaryMoneySource: {fileID: 1587204077}
 --- !u!850595691 &1514517667
 LightingSettings:

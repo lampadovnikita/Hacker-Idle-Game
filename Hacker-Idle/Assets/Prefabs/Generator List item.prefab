@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba825e9aecbcd24fba9b2154e06b3be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generatorUI: {fileID: 3871965942934253136}
+  generatorView: {fileID: 3871965942934253136}
   generator: {fileID: 0}
   moneySource: {fileID: 0}
 --- !u!1 &3871965943243758326
