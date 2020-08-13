@@ -3,7 +3,7 @@
 public class GeneratorViewController : MonoBehaviour
 {
 	[SerializeField]
-	private GeneratorView generatorUI = default;
+	private GeneratorView generatorView = default;
 
 	[SerializeField]
 	private Generator generator = default;
@@ -22,9 +22,9 @@ public class GeneratorViewController : MonoBehaviour
 	{
 		moneySource.OnAmountChanged += OnMoneyAmountChanged;
 
-		generatorUI.SetProductionProgressMaxValue(generator.ProductionTime);
+		generatorView.SetProductionProgressMaxValue(generator.ProductionTime);
 
-		UpdateGeneratorInfoUI();
+		UpdateGeneratorViewInfo();
 		UpdateUpgradeButtonInteractability();
 	}
 
@@ -40,15 +40,15 @@ public class GeneratorViewController : MonoBehaviour
 		if (isWritedOff == true)
 		{
 			generator.Upgrade();
-			UpdateGeneratorInfoUI();
+			UpdateGeneratorViewInfo();
 		}
 	}
 
-	private void UpdateGeneratorInfoUI()
+	private void UpdateGeneratorViewInfo()
 	{
-		generatorUI.SetUpgradeCostText(FloatBasedMoney.ToString(generator.UpgradeCost));
-		generatorUI.SetProductionRateText(FloatBasedMoney.ToString(generator.ProductionRate));
-		generatorUI.SetLevelText(generator.Level.ToString());
+		generatorView.SetUpgradeCostText(FloatBasedMoney.ToString(generator.UpgradeCost));
+		generatorView.SetProductionRateText(FloatBasedMoney.ToString(generator.ProductionRate));
+		generatorView.SetLevelText(generator.Level.ToString());
 	}
 
 	private void OnMoneyAmountChanged()
@@ -60,11 +60,11 @@ public class GeneratorViewController : MonoBehaviour
 	{
 		if (HasEnoughMoney() == true)
 		{
-			generatorUI.SetUpgradeButtonInteractability(true);
+			generatorView.SetUpgradeButtonInteractability(true);
 		}
 		else
 		{
-			generatorUI.SetUpgradeButtonInteractability(false);
+			generatorView.SetUpgradeButtonInteractability(false);
 		}
 	}
 
@@ -89,6 +89,6 @@ public class GeneratorViewController : MonoBehaviour
 			productionProgressTime -= generator.ProductionTime;
 		}
 
-		generatorUI.SetProductionProgressValue(productionProgressTime);
+		generatorView.SetProductionProgressValue(productionProgressTime);
 	}
 }
