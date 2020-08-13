@@ -50,7 +50,7 @@ public class GeneratorViewController : MonoBehaviour
 	private void UpdateGeneratorViewInfo()
 	{
 		generatorView.SetUpgradeCostText(FloatBasedMoney.ToString(generator.UpgradeCost));
-		generatorView.SetProductionRateText(FloatBasedMoney.ToString(generator.ProductionRate));
+		generatorView.SetProductionRateText(FloatBasedMoney.ToString(generator.ProductionAmount));
 		generatorView.SetLevelText(generator.Level.ToString());
 	}
 
