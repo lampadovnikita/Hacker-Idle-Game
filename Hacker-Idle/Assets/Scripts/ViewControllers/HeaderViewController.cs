@@ -3,7 +3,7 @@
 public class HeaderViewController : MonoBehaviour
 {
 	[SerializeField]
-	private HeaderView headerUI = default;
+	private HeaderView headerView = default;
 
 	[SerializeField]
 	private FloatBasedMoney primaryMoneySource = default;
@@ -12,16 +12,16 @@ public class HeaderViewController : MonoBehaviour
 	{
 		primaryMoneySource.OnAmountChanged += OnPrimaryMoneyAmountChanged;
 
-		UpdateAmountUI();
+		UpdateHeaderViewAmount();
 	}
 
 	private void OnPrimaryMoneyAmountChanged()
 	{
-		UpdateAmountUI();
+		UpdateHeaderViewAmount();
 	}
 
-	private void UpdateAmountUI()
+	private void UpdateHeaderViewAmount()
 	{
-		headerUI.SetPrimaryMoneyAmountText(FloatBasedMoney.ToString(primaryMoneySource.Amount));
+		headerView.SetPrimaryMoneyAmountText(FloatBasedMoney.ToString(primaryMoneySource.Amount));
 	}
 }
