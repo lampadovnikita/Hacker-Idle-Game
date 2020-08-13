@@ -11,12 +11,26 @@ public class GeneratorViewController : MonoBehaviour
 	[SerializeField]
 	private FloatBasedMoney moneySource = default;
 
+	private float productionProgressTime;
+
+	private void Awake()
+	{
+		productionProgressTime = 0f;
+	}
+
 	private void Start()
 	{
 		moneySource.OnAmountChanged += OnMoneyAmountChanged;
 
+		generatorUI.SetProductionProgressMaxValue(generator.ProductionTime);
+
 		UpdateGeneratorInfoUI();
 		UpdateUpgradeButtonInteractability();
+	}
+
+	private void Update()
+	{
+		UpdateProductionProgress();
 	}
 
 	public void OnUpgradeButtonPressed()
@@ -64,5 +78,17 @@ public class GeneratorViewController : MonoBehaviour
 		{
 			return false;
 		}
+	}
+
+	private void UpdateProductionProgress()
+	{
+		productionProgressTime += Time.deltaTime;
+
+		while (productionProgressTime >= generator.ProductionTime)
+		{
+			productionProgressTime -= generator.ProductionTime;
+		}
+
+		generatorUI.SetProductionProgressValue(productionProgressTime);
 	}
 }

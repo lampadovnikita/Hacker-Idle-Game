@@ -326,6 +326,10 @@ PrefabInstance:
       propertyPath: moneySource
       value: 
       objectReference: {fileID: 1587204077}
+    - target: {fileID: 6860083773332448172, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
 --- !u!224 &32460186 stripped
@@ -975,7 +979,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 29.4
+  m_fontSize: 29.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1265,6 +1269,10 @@ PrefabInstance:
       propertyPath: moneySource
       value: 
       objectReference: {fileID: 1587204077}
+    - target: {fileID: 6860083773332448172, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
 --- !u!1001 &4910789464558277847

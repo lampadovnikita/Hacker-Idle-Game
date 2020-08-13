@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class GeneratorView : MonoBehaviour
 {
+	private const float MIN_VALUE = 0f;
+
 	[SerializeField]
 	private Button upgradeButton = default;
 
@@ -16,6 +18,18 @@ public class GeneratorView : MonoBehaviour
 	[SerializeField]
 	private TextMeshProUGUI levelUGUI = default;
 
+	[SerializeField]
+	private Slider productionProgressSlider = default;
+
+	public void SetProductionProgressValue(float value)
+	{
+		productionProgressSlider.value = value;
+	}
+
+	public void SetProductionProgressMaxValue(float maxValue)
+	{
+		productionProgressSlider.maxValue = maxValue;
+	}
 
 	public void SetUpgradeButtonInteractability(bool isInteractable)
 	{

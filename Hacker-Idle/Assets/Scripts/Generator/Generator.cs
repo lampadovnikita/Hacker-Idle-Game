@@ -19,18 +19,23 @@ public class Generator : MonoBehaviour
 
 	private float productionRate;
 
+	private float productionTime;
+
 	#region Properties
 	public int Level => level;
 
 	public float UpgradeCost => upgradeCost;
 
 	public float ProductionRate => productionRate;
+
+	public float ProductionTime => productionTime;
 	#endregion
 
 	private void Awake()
 	{
 		InitializeProductionRate();
 		InitializeUpgradeCost();
+		InitializeProductionTime();
 	}
 
 	private void Start()
@@ -69,7 +74,7 @@ public class Generator : MonoBehaviour
 	{
 		while (true)
 		{
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(productionTime);
 
 			Debug.Log(gameObject.name + " produce " + productionRate + " CU");
 
@@ -111,5 +116,10 @@ public class Generator : MonoBehaviour
 		{
 			upgradeCost = baseData.PurchaseCost;
 		}
+	}
+
+	private void InitializeProductionTime()
+	{
+		productionTime = baseData.ProductionTime;
 	}
 }
