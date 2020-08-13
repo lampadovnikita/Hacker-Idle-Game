@@ -30,7 +30,10 @@ public class GeneratorViewController : MonoBehaviour
 
 	private void Update()
 	{
-		UpdateProductionProgress();
+		if (generator.IsPurchased() == true)
+		{ 
+			UpdateProductionProgress();
+		}
 	}
 
 	public void OnUpgradeButtonPressed()
