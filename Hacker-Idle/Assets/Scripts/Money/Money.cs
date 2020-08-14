@@ -25,8 +25,7 @@ public abstract class Money<T> : MonoBehaviour where T : IComparable<T>
 	{
 		if (amount.CompareTo(writeOffAmount) >= 0)
 		{
-			amount = Subtract(amount, writeOffAmount);
-			OnAmountChanged?.Invoke();
+			WriteOff(writeOffAmount);
 
 			return true;
 		}
