@@ -20,9 +20,6 @@ public class Generator : MonoBehaviour
 
 	private float upgradeCost;
 
-	// Production per 1 second
-	private float productionRate;
-
 	// Time of production duration
 	private float productionTime;
 
@@ -34,8 +31,6 @@ public class Generator : MonoBehaviour
 
 	public float UpgradeCost => upgradeCost;
 
-	public float ProductionRate => productionRate;
-
 	public float ProductionTime => productionTime;
 
 	public float ProductionAmount => productionAmount;
@@ -43,11 +38,9 @@ public class Generator : MonoBehaviour
 
 	private void Awake()
 	{
-		InitializeProductionRate();
+		InitializeProductionAmount();
 		InitializeUpgradeCost();
 		InitializeProductionTime();
-
-		UpdateProductionAmount();
 	}
 
 	private void Start()
@@ -71,15 +64,14 @@ public class Generator : MonoBehaviour
 
 		if (level > 1)
 		{
-			productionRate += baseData.BaseProductionRate * baseData.ProductionMultiplier;
+			productionAmount += baseData.BaseProductionAmount * baseData.ProductionMultiplier;
 		}
 		else if (level == 1)
 		{
-			productionRate = baseData.BaseProductionRate;
+			productionAmount = baseData.BaseProductionAmount;
+
 			StartCoroutine(ProduceLoopCoroutine());
 		}
-
-		UpdateProductionAmount();
 
 		OnUpgraded?.Invoke(this);
 	}
@@ -92,7 +84,7 @@ public class Generator : MonoBehaviour
 
 			yield return new WaitForSeconds(productionTime);
 
-			Debug.Log(gameObject.name + " produce " + productionRate + " CU");
+			Debug.Log(gameObject.name + " produce " + productionAmount + " CU");
 
 			OnProduced?.Invoke(productionAmount);
 		}
@@ -110,16 +102,16 @@ public class Generator : MonoBehaviour
 		}
 	}
 
-	private void InitializeProductionRate()
+	private void InitializeProductionAmount()
 	{
 		if (level == 1)
 		{
-			productionRate = baseData.BaseProductionRate;
+			productionAmount = baseData.BaseProductionAmount;
 		}
 		else
 		{
-			productionRate = baseData.BaseProductionRate +
-				baseData.BaseProductionRate * baseData.ProductionMultiplier * (level - 1);
+			productionAmount = baseData.BaseProductionAmount +
+				baseData.BaseProductionAmount * baseData.ProductionMultiplier * (level - 1);
 		}
 	}
 
@@ -138,10 +130,5 @@ public class Generator : MonoBehaviour
 	private void InitializeProductionTime()
 	{
 		productionTime = baseData.ProductionTime;
-	}
-
-	private void UpdateProductionAmount()
-	{
-		productionAmount = productionRate * productionTime;
 	}
 }

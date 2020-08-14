@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   purchaseCost: 60
   upgradeCostGrowthRate: 1.15
-  baseProductionRate: 20
+  baseProductionAmount: 60
   productionTime: 3
   productionMultiplier: 1
