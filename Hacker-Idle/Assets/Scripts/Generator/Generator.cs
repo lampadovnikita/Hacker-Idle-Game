@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
+	public delegate void BeginProduce(Generator sender);
+	public event BeginProduce OnBeginProduce;
+
 	public delegate void Produced(float producedAmount);
 	public event Produced OnProduced;
 
@@ -85,6 +88,8 @@ public class Generator : MonoBehaviour
 	{
 		while (true)
 		{
+			OnBeginProduce?.Invoke(this);
+
 			yield return new WaitForSeconds(productionTime);
 
 			Debug.Log(gameObject.name + " produce " + productionRate + " CU");
