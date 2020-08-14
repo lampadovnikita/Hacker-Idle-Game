@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class GeneratorViewController : MonoBehaviour
 {
@@ -22,18 +23,12 @@ public class GeneratorViewController : MonoBehaviour
 	{
 		moneySource.OnAmountChanged += OnMoneyAmountChanged;
 
+		generator.OnBeginProduce += OnGeneratorBeginProduce;
+
 		generatorView.SetProductionProgressMaxValue(generator.ProductionTime);
 
 		UpdateGeneratorViewInfo();
 		UpdateUpgradeButtonInteractability();
-	}
-
-	private void Update()
-	{
-		if (generator.IsPurchased() == true)
-		{ 
-			UpdateProductionProgress();
-		}
 	}
 
 	public void OnUpgradeButtonPressed()
@@ -83,15 +78,30 @@ public class GeneratorViewController : MonoBehaviour
 		}
 	}
 
-	private void UpdateProductionProgress()
+	private void OnGeneratorBeginProduce(Generator sender)
 	{
-		productionProgressTime += Time.deltaTime;
+		// To prevent errors with multiple adjustment of the progress value
+		// if the generator starts a new production cycle earlier than the
+		// previous cycle is fully visualized
+		StopCoroutine(VisualizeProductionProgressCycle());
 
-		while (productionProgressTime >= generator.ProductionTime)
+		StartCoroutine(VisualizeProductionProgressCycle());
+	}
+
+	// Coroutine to visualize 1 cycle of generators production
+	private IEnumerator VisualizeProductionProgressCycle()
+	{
+		productionProgressTime = 0f;
+		while (productionProgressTime <= generator.ProductionTime)
 		{
-			productionProgressTime -= generator.ProductionTime;
+			generatorView.SetProductionProgressValue(productionProgressTime);
+
+			yield return null;
+
+			productionProgressTime += Time.deltaTime;
 		}
 
-		generatorView.SetProductionProgressValue(productionProgressTime);
+		// At the end reset progress value to 0
+		generatorView.SetProductionProgressValue(0f);
 	}
 }
