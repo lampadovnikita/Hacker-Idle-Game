@@ -26,7 +26,7 @@ public class FloatBasedMoney : Money<float>
 			amount /= Mathf.Pow(10f, metricOrder * EXP_PER_METRIC);
 		}
 
-		return string.Format("{0:F5}{1}", amount, prefix);
+		return string.Format("{0:F3}{1}", amount, prefix);
 	}
 
 	public override string ToString()
