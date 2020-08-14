@@ -11,7 +11,7 @@ public class GeneratorView : MonoBehaviour
 	private TextMeshProUGUI upgradeCostUGUI = default;
 
 	[SerializeField]
-	private TextMeshProUGUI productionRateUGUI = default;
+	private TextMeshProUGUI productionAmountUGUI = default;
 
 	[SerializeField]
 	private TextMeshProUGUI levelUGUI = default;
@@ -41,7 +41,7 @@ public class GeneratorView : MonoBehaviour
 
 	public void SetProductionRateText(string text)
 	{
-		productionRateUGUI.text = text;
+		productionAmountUGUI.text = text;
 	}
 
 	public void SetLevelText(string text)
