@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class MoneyBaseData : ScriptableObject
 {
 	[SerializeField]
-	private Currency currency;
+	private Currency currency = default;
 
 	[SerializeField]
-	private Image icon;
+	private Image icon = default;
 }
