@@ -36,15 +36,19 @@ public class FloatBasedMoney : Money<float>
 
 	protected override float Add(float lhs, float rhs)
 	{
-		float res;
+		float res = lhs + rhs;
 
-		try
+		if (float.IsPositiveInfinity(res) == true)
 		{
-			res = checked(lhs + rhs);
-		}
-		catch (OverflowException e)
-		{
+			Debug.LogWarning("Money value is too large to increase, value was set to MaxValue.");
+
 			res = float.MaxValue;
+		}
+		else if (float.IsNegativeInfinity(res) == true)
+		{
+			Debug.LogWarning("Money value is too small to decrease, value was set to MinValue.");
+
+			res = float.MinValue;
 		}
 
 		return res;
@@ -52,14 +56,18 @@ public class FloatBasedMoney : Money<float>
 
 	protected override float Subtract(float lhs, float rhs)
 	{
-		float res;
+		float res = lhs - rhs;
 
-		try
+		if (float.IsPositiveInfinity(res) == true)
 		{
-			res = checked(lhs - rhs);
+			Debug.LogWarning("Money value is too large to increase, value was set to MaxValue.");
+
+			res = float.MaxValue;
 		}
-		catch (OverflowException e)
+		else if (float.IsNegativeInfinity(res) == true)
 		{
+			Debug.LogWarning("Money value is too small to decrease, value was set to MinValue.");
+
 			res = float.MinValue;
 		}
 
