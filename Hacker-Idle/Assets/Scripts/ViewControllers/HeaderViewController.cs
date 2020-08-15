@@ -11,7 +11,7 @@ public class HeaderViewController : MonoBehaviour
 
 	private void Start()
 	{
-		flopcoinSource = Player.Instance.FlopCoinPurse;
+		flopcoinSource = Player.Instance.FlopcoinPurse;
 		informationSource = Player.Instance.InformationPurse;
 
 		flopcoinSource.OnAmountChanged += UpdateFlopcoinAmountText;

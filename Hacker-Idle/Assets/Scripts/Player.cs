@@ -5,13 +5,13 @@ public class Player : MonoBehaviour
 	public static Player Instance { get; private set; }
 
 	[SerializeField]
-	private FloatBasedResource flopCoinPurse = default;
+	private FloatBasedResource flopcoinPurse = default;
 
 	[SerializeField]
 	private FloatBasedResource informationPurse = default;
 
 	#region Properties
-	public FloatBasedResource FlopCoinPurse => flopCoinPurse;
+	public FloatBasedResource FlopcoinPurse => flopcoinPurse;
 
 	public FloatBasedResource InformationPurse => informationPurse;
 	#endregion

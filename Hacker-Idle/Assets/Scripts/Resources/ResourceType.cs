@@ -1,5 +1,5 @@
 ﻿public enum ResourceType
 {
-	FlopCoin,
+	Flopcoin,
 	Information
 }

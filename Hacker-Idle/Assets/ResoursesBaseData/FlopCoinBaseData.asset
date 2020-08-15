@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00e020f7686a9a646b121b3fe9031b4a, type: 3}
-  m_Name: FlopCoinBaseData
+  m_Name: FlopcoinBaseData
   m_EditorClassIdentifier: 
-  currency: 0
+  resourceType: 0
   icon: {fileID: 0}
