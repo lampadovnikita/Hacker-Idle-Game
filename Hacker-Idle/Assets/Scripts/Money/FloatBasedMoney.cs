@@ -54,6 +54,7 @@ public class FloatBasedMoney : Money<float>
 		return res;
 	}
 
+
 	protected override float Subtract(float lhs, float rhs)
 	{
 		float res = lhs - rhs;
@@ -73,4 +74,17 @@ public class FloatBasedMoney : Money<float>
 
 		return res;
 	}
+
+	protected override bool IsNegative(float val)
+	{
+		if (val < 0f)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 }
