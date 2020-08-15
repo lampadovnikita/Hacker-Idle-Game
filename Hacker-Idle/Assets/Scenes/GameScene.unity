@@ -316,7 +316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4106297827746330371, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.12313843
+      value: 0.123168945
       objectReference: {fileID: 0}
     - target: {fileID: 5570389750213974011, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: generator
@@ -326,6 +326,14 @@ PrefabInstance:
       propertyPath: moneySource
       value: 
       objectReference: {fileID: 1587204077}
+    - target: {fileID: 6860083772673712971, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.14434814
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860083772673712971, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.20800781
+      objectReference: {fileID: 0}
     - target: {fileID: 6860083773216873211, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.0008544922
@@ -485,7 +493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0976b4aac81c7574ebe5b80d620de6e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyPurse: {fileID: 1587204077}
+  resourceDestination: {fileID: 1587204077}
   generators:
   - {fileID: 1597183872}
   - {fileID: 2029046330}
@@ -980,7 +988,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.1
+  m_fontSize: 29.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1244,7 +1252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4106297827746330371, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.12313843
+      value: 0.123168945
       objectReference: {fileID: 0}
     - target: {fileID: 5570389750213974011, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: generator
@@ -1254,6 +1262,14 @@ PrefabInstance:
       propertyPath: moneySource
       value: 
       objectReference: {fileID: 1587204077}
+    - target: {fileID: 6860083772673712971, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.14434814
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860083772673712971, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.20800781
+      objectReference: {fileID: 0}
     - target: {fileID: 6860083773216873211, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.0008544922

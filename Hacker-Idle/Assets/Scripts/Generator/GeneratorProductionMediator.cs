@@ -4,7 +4,7 @@ using UnityEngine;
 public class GeneratorProductionMediator : MonoBehaviour
 {
 	[SerializeField]
-	private FloatBasedMoney moneyPurse = default;
+	private FloatBasedResource resourceDestination = default;
 
 	[SerializeField]
 	private List<Generator> generators = default;
@@ -19,6 +19,6 @@ public class GeneratorProductionMediator : MonoBehaviour
 
 	private void OnGeneratorProduced(float producedAmount)
 	{
-		moneyPurse.Deposit(producedAmount);
+		resourceDestination.Deposit(producedAmount);
 	}
 }

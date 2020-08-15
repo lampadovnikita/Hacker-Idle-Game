@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class FloatBasedMoney : Money<float>
+public class FloatBasedResource : Resource<float>
 {
 	private static readonly string[] METRIC_PREFIXES = { "", "K", "M", "G", "T", "P", "E", "Z", "Y" };
 	private static readonly int EXP_PER_METRIC = 3;
@@ -39,7 +39,7 @@ public class FloatBasedMoney : Money<float>
 
 		if (float.IsPositiveInfinity(res) == true)
 		{
-			Debug.LogWarning("Money value is too large to increase, value was set to MaxValue.");
+			Debug.LogWarning("Resource amount value is too large to increase, value was set to MaxValue.");
 
 			res = float.MaxValue;
 		}
@@ -53,7 +53,7 @@ public class FloatBasedMoney : Money<float>
 
 		if (float.IsNegativeInfinity(res) == true)
 		{
-			Debug.LogWarning("Money value is too small to decrease, value was set to MinValue.");
+			Debug.LogWarning("Resource amount value is too small to decrease, value was set to MinValue.");
 
 			res = float.MinValue;
 		}

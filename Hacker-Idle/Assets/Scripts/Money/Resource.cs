@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-public abstract class Money<T> : MonoBehaviour where T : struct, IComparable<T>
+public abstract class Resource<T> : MonoBehaviour where T : struct, IComparable<T>
 {
 	public delegate void AmountChanged();
 	public event AmountChanged OnAmountChanged;
 
 	[SerializeField]
-	private MoneyBaseData baseData = default;
+	private ResourceBaseData baseData = default;
 
 	[SerializeField]
 	private T initialAmount = default;
@@ -31,7 +31,8 @@ public abstract class Money<T> : MonoBehaviour where T : struct, IComparable<T>
 
 		if (amount.CompareTo(writeOffAmount) >= 0)
 		{
-			WriteOff(writeOffAmount);
+			amount = Subtract(amount, writeOffAmount);
+			OnAmountChanged?.Invoke();
 
 			return true;
 		}
@@ -40,19 +41,6 @@ public abstract class Money<T> : MonoBehaviour where T : struct, IComparable<T>
 			return false;
 		}
 	}
-
-	public void WriteOff(T writeOffAmount)
-	{
-		if (IsNegative(writeOffAmount) == true)
-		{
-			throw new ArgumentOutOfRangeException(nameof(writeOffAmount), writeOffAmount,
-				"WriteOff must receive a non-negative input value");
-		}
-
-		amount = Subtract(amount, writeOffAmount);
-		OnAmountChanged?.Invoke();
-	}
-
 	public void Deposit(T depositAmount)
 	{
 		if (IsNegative(depositAmount) == true)

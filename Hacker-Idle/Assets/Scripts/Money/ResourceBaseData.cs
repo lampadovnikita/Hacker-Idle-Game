@@ -2,10 +2,10 @@
 using UnityEngine.UI;
 
 [CreateAssetMenu]
-public class MoneyBaseData : ScriptableObject
+public class ResourceBaseData : ScriptableObject
 {
 	[SerializeField]
-	private Currency currency = default;
+	private ResourceType resourceType = default;
 
 	[SerializeField]
 	private Image icon = default;

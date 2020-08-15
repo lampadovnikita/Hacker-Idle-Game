@@ -10,7 +10,7 @@ public class GeneratorViewController : MonoBehaviour
 	private Generator generator = default;
 
 	[SerializeField]
-	private FloatBasedMoney moneySource = default;
+	private FloatBasedResource moneySource = default;
 
 	private float productionProgressTime;
 
@@ -44,8 +44,8 @@ public class GeneratorViewController : MonoBehaviour
 
 	private void UpdateGeneratorViewInfo()
 	{
-		generatorView.SetUpgradeCostText(FloatBasedMoney.ToString(generator.UpgradeCost));
-		generatorView.SetProductionRateText(FloatBasedMoney.ToString(generator.ProductionAmount));
+		generatorView.SetUpgradeCostText(FloatBasedResource.ToString(generator.UpgradeCost));
+		generatorView.SetProductionRateText(FloatBasedResource.ToString(generator.ProductionAmount));
 		generatorView.SetLevelText(generator.Level.ToString());
 	}
 
