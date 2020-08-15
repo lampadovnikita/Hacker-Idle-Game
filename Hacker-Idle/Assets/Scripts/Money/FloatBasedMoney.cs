@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FloatBasedMoney : Money<float>
 {
@@ -44,28 +43,15 @@ public class FloatBasedMoney : Money<float>
 
 			res = float.MaxValue;
 		}
-		else if (float.IsNegativeInfinity(res) == true)
-		{
-			Debug.LogWarning("Money value is too small to decrease, value was set to MinValue.");
-
-			res = float.MinValue;
-		}
 
 		return res;
 	}
-
 
 	protected override float Subtract(float lhs, float rhs)
 	{
 		float res = lhs - rhs;
 
-		if (float.IsPositiveInfinity(res) == true)
-		{
-			Debug.LogWarning("Money value is too large to increase, value was set to MaxValue.");
-
-			res = float.MaxValue;
-		}
-		else if (float.IsNegativeInfinity(res) == true)
+		if (float.IsNegativeInfinity(res) == true)
 		{
 			Debug.LogWarning("Money value is too small to decrease, value was set to MinValue.");
 
