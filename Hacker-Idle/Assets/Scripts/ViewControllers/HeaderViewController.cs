@@ -17,6 +17,9 @@ public class HeaderViewController : MonoBehaviour
 		flopcoinSource.OnAmountChanged += UpdateFlopcoinAmountText;
 
 		informationSource.OnAmountChanged += UpdateInformationAmountText;
+
+		UpdateFlopcoinAmountText();
+		UpdateInformationAmountText();
 	}
 
 	private void UpdateFlopcoinAmountText()
@@ -26,6 +29,6 @@ public class HeaderViewController : MonoBehaviour
 
 	private void UpdateInformationAmountText()
 	{
-		headerView.SetFlopcoinAmountText(FloatBasedResource.ToString(flopcoinSource.Amount));
+		headerView.SetInformationAmountText(FloatBasedResource.ToString(informationSource.Amount));
 	}
 }
