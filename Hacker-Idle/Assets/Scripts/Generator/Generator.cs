@@ -20,10 +20,10 @@ public class Generator : MonoBehaviour
 
 	private float upgradeCost;
 
-	// Time of production duration
+	// Time of one production cycle duration
 	private float productionTime;
 
-	// Production per second * duration
+	// Amount of produced units per 1 production cycle
 	private float productionAmount;
 
 	#region Properties
