@@ -1112,6 +1112,10 @@ PrefabInstance:
       propertyPath: flopCoinMoney
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6034756221615407346, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}
+      propertyPath: flopCoinPurse
+      value: 
+      objectReference: {fileID: 1587204077}
     m_RemovedComponents:
     - {fileID: 1471452095337325838, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}
