@@ -950,8 +950,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   headerView: {fileID: 1504595189}
-  flopcoinSource: {fileID: 0}
-  informationSource: {fileID: 0}
 --- !u!850595691 &1514517667
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -1248,10 +1246,6 @@ PrefabInstance:
       propertyPath: flopCoinMoney
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 6034756221615407346, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}
-      propertyPath: flopCoinPurse
-      value: 
-      objectReference: {fileID: 1587204077}
     m_RemovedComponents:
     - {fileID: 1471452095337325838, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}
