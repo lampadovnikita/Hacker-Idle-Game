@@ -3,14 +3,16 @@ using UnityEngine;
 
 public class GeneratorProductionMediator : MonoBehaviour
 {
-	[SerializeField]
-	private FloatBasedResource resourceDestination = default;
 
 	[SerializeField]
 	private List<Generator> generators = default;
 
-	private void Awake()
+	private Player player;
+	
+	private void Start()
 	{
+		player = Player.Instance;
+
 		foreach (Generator g in generators)
 		{
 			g.OnProduced += OnGeneratorProduced;
@@ -19,6 +21,6 @@ public class GeneratorProductionMediator : MonoBehaviour
 
 	private void OnGeneratorProduced(float producedAmount)
 	{
-		resourceDestination.Deposit(producedAmount);
+		player.FlopCoinPurse.Deposit(producedAmount);
 	}
 }
