@@ -5,23 +5,27 @@ public class HeaderViewController : MonoBehaviour
 	[SerializeField]
 	private HeaderView headerView = default;
 
-	[SerializeField]
-	private FloatBasedResource primaryMoneySource = default;
+	private FloatBasedResource flopcoinSource;
+
+	private FloatBasedResource informationSource;
 
 	private void Start()
 	{
-		primaryMoneySource.OnAmountChanged += OnPrimaryMoneyAmountChanged;
+		flopcoinSource = Player.Instance.FlopCoinPurse;
+		informationSource = Player.Instance.InformationPurse;
 
-		UpdateHeaderViewAmount();
+		flopcoinSource.OnAmountChanged += UpdateFlopcoinAmountText;
+
+		informationSource.OnAmountChanged += UpdateInformationAmountText;
 	}
 
-	private void OnPrimaryMoneyAmountChanged()
+	private void UpdateFlopcoinAmountText()
 	{
-		UpdateHeaderViewAmount();
+		headerView.SetFlopcoinAmountText(FloatBasedResource.ToString(flopcoinSource.Amount));
 	}
 
-	private void UpdateHeaderViewAmount()
+	private void UpdateInformationAmountText()
 	{
-		headerView.SetPrimaryMoneyAmountText(FloatBasedResource.ToString(primaryMoneySource.Amount));
+		headerView.SetFlopcoinAmountText(FloatBasedResource.ToString(flopcoinSource.Amount));
 	}
 }

@@ -4,10 +4,18 @@ using UnityEngine;
 public class HeaderView : MonoBehaviour
 {
 	[SerializeField]
-	private TextMeshProUGUI primaryMoneyAmountUGUI = default;
+	private TextMeshProUGUI flopcoinAmountUGUI = default;
 
-	public void SetPrimaryMoneyAmountText(string text)
+	[SerializeField]
+	private TextMeshProUGUI informationAmountUGUI = default;
+
+	public void SetFlopcoinAmountText(string text)
 	{
-		primaryMoneyAmountUGUI.text = text;
+		flopcoinAmountUGUI.text = text;
+	}
+
+	public void SetInformationAmountText(string text)
+	{
+		informationAmountUGUI.text = text;
 	}
 }
