@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[System.Serializable]
 public class FloatBasedResource : Resource<float>
 {
 	private static readonly string[] METRIC_PREFIXES = { "", "K", "M", "G", "T", "P", "E", "Z", "Y" };

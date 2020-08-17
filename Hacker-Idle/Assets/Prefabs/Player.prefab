@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 733274359923524285}
   - component: {fileID: 6034756221615407346}
-  - component: {fileID: 733274359923524284}
-  - component: {fileID: 5270036342542749103}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -45,33 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd1185ac8e4dc0148bc13bd1cb27a5a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flopCoinPurse: {fileID: 733274359923524284}
-  informationPurse: {fileID: 5270036342542749103}
---- !u!114 &733274359923524284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733274359923524282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0843bf832a11a5641803269d496c801d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseData: {fileID: 11400000, guid: 09c35c55196011640a9dba7a701de36f, type: 2}
-  initialAmount: 0
---- !u!114 &5270036342542749103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733274359923524282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0843bf832a11a5641803269d496c801d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseData: {fileID: 11400000, guid: 2fed6644adb93124cba797d37c1b370f, type: 2}
-  initialAmount: 0
+  flopcoinPurse:
+    baseData: {fileID: 11400000, guid: 09c35c55196011640a9dba7a701de36f, type: 2}
+    initialAmount: 0
+  informationPurse:
+    baseData: {fileID: 11400000, guid: 2fed6644adb93124cba797d37c1b370f, type: 2}
+    initialAmount: 0

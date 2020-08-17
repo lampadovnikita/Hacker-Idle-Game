@@ -1,7 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
-public abstract class Resource<T> : MonoBehaviour where T : struct, IComparable<T>
+[System.Serializable]
+public abstract class Resource<T> where T : struct, IComparable<T>
 {
 	public delegate void AmountChanged();
 	public event AmountChanged OnAmountChanged;
@@ -16,10 +17,10 @@ public abstract class Resource<T> : MonoBehaviour where T : struct, IComparable<
 
 	public T Amount => amount;
 
-	private void Awake()
-	{
-		amount = initialAmount;
-	}
+	//private void Awake()
+	//{
+	//	amount = initialAmount;
+	//}
 
 	public bool AttemptWriteOff(T writeOffAmount)
 	{

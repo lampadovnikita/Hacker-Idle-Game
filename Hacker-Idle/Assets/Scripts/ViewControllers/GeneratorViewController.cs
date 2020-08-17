@@ -9,8 +9,7 @@ public class GeneratorViewController : MonoBehaviour
 	[SerializeField]
 	private Generator generator = default;
 
-	[SerializeField]
-	private FloatBasedResource moneySource = default;
+	private FloatBasedResource moneySource;
 
 	private float productionProgressTime;
 
@@ -21,6 +20,8 @@ public class GeneratorViewController : MonoBehaviour
 
 	private void Start()
 	{
+		moneySource = Player.Instance.FlopcoinPurse;
+
 		moneySource.OnAmountChanged += OnMoneyAmountChanged;
 
 		generator.OnBeginProduce += OnGeneratorBeginProduce;

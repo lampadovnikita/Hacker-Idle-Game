@@ -29,5 +29,7 @@ public class Player : MonoBehaviour
 		}
 
 		DontDestroyOnLoad(gameObject);
+
+		flopcoinPurse.Deposit(1000000f);
 	}
 }
