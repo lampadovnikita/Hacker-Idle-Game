@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class FloatAccumulator : Accumulator<float>
 {
 	private static readonly string[] METRIC_PREFIXES = { "", "K", "M", "G", "T", "P", "E", "Z", "Y" };
 	private static readonly int EXP_PER_METRIC = 3;
+
+	public FloatAccumulator() { }
 
 	public FloatAccumulator(float initialAmount) : base(initialAmount) { }
 

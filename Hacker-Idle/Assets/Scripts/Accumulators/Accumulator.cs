@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public abstract class Accumulator<T> where T : struct, IComparable<T>
 {
 	public delegate void AmountChanged();
@@ -13,6 +13,8 @@ public abstract class Accumulator<T> where T : struct, IComparable<T>
 	private T amount;
 
 	public T Amount => amount;
+
+	public Accumulator() { }
 
 	public Accumulator(T initialAmount)
 	{

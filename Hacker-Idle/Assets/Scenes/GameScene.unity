@@ -1022,6 +1022,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c89999d9a800745b1a0c4564aca350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1675174906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 733274359923524282, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}
+  m_PrefabInstance: {fileID: 733274360906648913}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1675174907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675174906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8630b2fef92a6479c203e4e4ea7634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseData: {fileID: 11400000, guid: 2fed6644adb93124cba797d37c1b370f, type: 2}
+  initialAmount: 0
+--- !u!114 &1675174908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675174906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1229086f3bf275b4ebec9eb33940853e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseData: {fileID: 11400000, guid: 09c35c55196011640a9dba7a701de36f, type: 2}
+  initialAmount: 1000000
 --- !u!224 &1887255926 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
@@ -1251,6 +1284,14 @@ PrefabInstance:
       propertyPath: flopcoinPurse.baseData
       value: 
       objectReference: {fileID: 11400000, guid: 09c35c55196011640a9dba7a701de36f, type: 2}
+    - target: {fileID: 6034756221615407346, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}
+      propertyPath: flopcoin
+      value: 
+      objectReference: {fileID: 1675174908}
+    - target: {fileID: 6034756221615407346, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}
+      propertyPath: information
+      value: 
+      objectReference: {fileID: 1675174907}
     m_RemovedComponents:
     - {fileID: 1471452095337325838, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}
     - {fileID: 5270036342542749103, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}

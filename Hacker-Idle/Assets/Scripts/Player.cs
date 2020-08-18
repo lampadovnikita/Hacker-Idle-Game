@@ -5,15 +5,15 @@ public class Player : MonoBehaviour
 	public static Player Instance { get; private set; }
 
 	[SerializeField]
-	private FloatAccumulator flopcoinAccumulator = default;
+	private Flopcoin flopcoin = default;
 
 	[SerializeField]
-	private FloatAccumulator informationAccumulator = default;
+	private Information information = default;
 
 	#region Properties
-	public FloatAccumulator FlopcoinAccumulator => flopcoinAccumulator;
+	public FloatAccumulator FlopcoinAccumulator => flopcoin.Accumulator;
 
-	public FloatAccumulator InformationAccumulator => informationAccumulator;
+	public FloatAccumulator InformationAccumulator => information.Accumulator;
 	#endregion
 
 	private void Awake()
@@ -29,7 +29,5 @@ public class Player : MonoBehaviour
 		}
 
 		DontDestroyOnLoad(gameObject);
-
-		flopcoinAccumulator.Deposit(1000000f);
 	}
 }
