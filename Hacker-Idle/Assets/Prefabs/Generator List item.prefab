@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.025, y: 0.08923702}
   m_AnchorMax: {x: 0.96875, y: 0.910763}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 5.2750693e-11}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3871965942106727108
 CanvasRenderer:
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.5
+  m_fontSize: 32.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -170,10 +170,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.75322545}
-  m_AnchorMax: {x: 1, y: 0.93553245}
-  m_AnchoredPosition: {x: 0, y: 0.6000061}
-  m_SizeDelta: {x: 0, y: 0.2033081}
+  m_AnchorMin: {x: 0, y: 0.81700003}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3871965942934253136
 MonoBehaviour:
@@ -206,7 +206,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   generatorView: {fileID: 3871965942934253136}
   generator: {fileID: 0}
-  moneySource: {fileID: 0}
 --- !u!1 &3871965943243758326
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,8 +242,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.45480114, y: 0.2828172}
   m_AnchorMax: {x: 0.7353922, y: 0.74020076}
-  m_AnchoredPosition: {x: 0.0000038146973, y: -0.000038146973}
-  m_SizeDelta: {x: -0.000038146973, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3871965943243758322
 CanvasRenderer:
@@ -431,7 +430,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.95
+  m_fontSize: 39.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -507,8 +506,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.793413, y: 0.2828172}
   m_AnchorMax: {x: 0.97082597, y: 0.74020076}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
-  m_SizeDelta: {x: -0.000015258789, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &913605298878987854
 CanvasRenderer:
@@ -565,7 +564,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.95
+  m_fontSize: 39.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -618,6 +617,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1349185817787511664, guid: f04d68240357b584c8462f33e1d90c0d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349185817787511664, guid: f04d68240357b584c8462f33e1d90c0d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1349185817877678784, guid: f04d68240357b584c8462f33e1d90c0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -664,19 +671,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1349185817877678784, guid: f04d68240357b584c8462f33e1d90c0d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.14437866
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1349185817877678784, guid: f04d68240357b584c8462f33e1d90c0d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.20800018
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1349185817877678784, guid: f04d68240357b584c8462f33e1d90c0d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0.42663574
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1349185817877678784, guid: f04d68240357b584c8462f33e1d90c0d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -0.41028595
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1349185817877678784, guid: f04d68240357b584c8462f33e1d90c0d, type: 3}
       propertyPath: m_AnchorMin.x
