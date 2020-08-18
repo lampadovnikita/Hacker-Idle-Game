@@ -22,8 +22,7 @@ public class GeneratorViewController : MonoBehaviour
 	{
 		moneySource = Player.Instance.FlopcoinAccumulator;
 
-		moneySource.OnAmountChanged += OnMoneyAmountChanged;
-
+		generator.OnUpgraded += OnGeneratorUpgraded;
 		generator.OnBeginProduce += OnGeneratorBeginProduce;
 
 		generatorView.SetProductionProgressMaxValue(generator.ProductionTime);
@@ -50,7 +49,7 @@ public class GeneratorViewController : MonoBehaviour
 		generatorView.SetLevelText(generator.Level.ToString());
 	}
 
-	private void OnMoneyAmountChanged()
+	private void OnGeneratorUpgraded(Generator sender)
 	{
 		UpdateUpgradeButtonInteractability();
 	}
