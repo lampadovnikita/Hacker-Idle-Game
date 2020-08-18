@@ -5,14 +5,14 @@ public class HeaderViewController : MonoBehaviour
 	[SerializeField]
 	private HeaderView headerView = default;
 
-	private FloatBasedResource flopcoinSource;
+	private FloatAccumulator flopcoinSource;
 
-	private FloatBasedResource informationSource;
+	private FloatAccumulator informationSource;
 
 	private void Start()
 	{
-		flopcoinSource = Player.Instance.FlopcoinPurse;
-		informationSource = Player.Instance.InformationPurse;
+		flopcoinSource = Player.Instance.FlopcoinAccumulator;
+		informationSource = Player.Instance.InformationAccumulator;
 
 		flopcoinSource.OnAmountChanged += UpdateFlopcoinAmountText;
 
@@ -24,11 +24,11 @@ public class HeaderViewController : MonoBehaviour
 
 	private void UpdateFlopcoinAmountText()
 	{
-		headerView.SetFlopcoinAmountText(FloatBasedResource.ToString(flopcoinSource.Amount));
+		headerView.SetFlopcoinAmountText(FloatAccumulator.ToString(flopcoinSource.Amount));
 	}
 
 	private void UpdateInformationAmountText()
 	{
-		headerView.SetInformationAmountText(FloatBasedResource.ToString(informationSource.Amount));
+		headerView.SetInformationAmountText(FloatAccumulator.ToString(informationSource.Amount));
 	}
 }

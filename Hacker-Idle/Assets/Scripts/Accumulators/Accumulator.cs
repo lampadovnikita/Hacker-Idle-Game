@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public abstract class Resource<T> where T : struct, IComparable<T>
+public abstract class Accumulator<T> where T : struct, IComparable<T>
 {
 	public delegate void AmountChanged();
 	public event AmountChanged OnAmountChanged;
@@ -10,17 +10,14 @@ public abstract class Resource<T> where T : struct, IComparable<T>
 	[SerializeField]
 	private ResourceBaseData baseData = default;
 
-	[SerializeField]
-	private T initialAmount = default;
-
 	private T amount;
 
 	public T Amount => amount;
 
-	//private void Awake()
-	//{
-	//	amount = initialAmount;
-	//}
+	public Accumulator(T initialAmount)
+	{
+		Deposit(initialAmount);
+	}
 
 	public bool AttemptWriteOff(T writeOffAmount)
 	{

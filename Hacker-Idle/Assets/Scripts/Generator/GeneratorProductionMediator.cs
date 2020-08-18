@@ -6,11 +6,11 @@ public class GeneratorProductionMediator : MonoBehaviour
 	[SerializeField]
 	private List<Generator> generators = default;
 
-	private FloatBasedResource resourceDestination;
+	private FloatAccumulator productionDestination;
 	
 	private void Start()
 	{
-		resourceDestination = Player.Instance.InformationPurse;
+		productionDestination = Player.Instance.InformationAccumulator;
 
 		foreach (Generator g in generators)
 		{
@@ -20,6 +20,6 @@ public class GeneratorProductionMediator : MonoBehaviour
 
 	private void OnGeneratorProduced(float producedAmount)
 	{
-		resourceDestination.Deposit(producedAmount);
+		productionDestination.Deposit(producedAmount);
 	}
 }

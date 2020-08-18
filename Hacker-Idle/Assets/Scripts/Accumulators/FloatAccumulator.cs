@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class FloatBasedResource : Resource<float>
+public class FloatAccumulator : Accumulator<float>
 {
 	private static readonly string[] METRIC_PREFIXES = { "", "K", "M", "G", "T", "P", "E", "Z", "Y" };
 	private static readonly int EXP_PER_METRIC = 3;
+
+	public FloatAccumulator(float initialAmount) : base(initialAmount) { }
 
 	public static string ToString(float amount)
 	{
