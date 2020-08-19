@@ -80,12 +80,16 @@ public class GeneratorViewController : MonoBehaviour
 
 	private void RestartProductionProgressVisualization()
 	{
-		// To prevent errors with multiple adjustment of the progress value
-		// if the generator starts a new production cycle earlier than the
-		// previous cycle is fully visualized
-		StopCoroutine(VisualizeProductionProgressCycle());
+		// Check this to prevent coroutine invocation from inactive object
+		if (gameObject.activeInHierarchy == true)
+		{ 
+			// To prevent errors with multiple adjustment of the progress value
+			// if the generator starts a new production cycle earlier than the
+			// previous cycle is fully visualized
+			StopCoroutine(VisualizeProductionProgressCycle());
 
-		StartCoroutine(VisualizeProductionProgressCycle());
+			StartCoroutine(VisualizeProductionProgressCycle());
+		}
 	}
 
 	// Coroutine to visualize 1 cycle of generators production
