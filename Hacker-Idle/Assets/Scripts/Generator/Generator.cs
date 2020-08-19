@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
-	public delegate void BeginProduce(Generator sender);
+	public delegate void BeginProduce(object sender);
 	public event BeginProduce OnBeginProduce;
 
-	public delegate void Produced(float producedAmount);
+	public delegate void Produced(object sender, float producedAmount);
 	public event Produced OnProduced;
 
-	public delegate void Upgraded(Generator sender);
+	public delegate void Upgraded(object sender);
 	public event Upgraded OnUpgraded;
 
 	[SerializeField]
@@ -86,7 +86,7 @@ public class Generator : MonoBehaviour
 
 			Debug.Log(gameObject.name + " produce " + productionAmount + " CU");
 
-			OnProduced?.Invoke(productionAmount);
+			OnProduced?.Invoke(this, productionAmount);
 		}
 	}
 

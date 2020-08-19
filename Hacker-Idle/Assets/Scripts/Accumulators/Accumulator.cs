@@ -4,7 +4,7 @@ using UnityEngine;
 [Serializable]
 public abstract class Accumulator<T> where T : struct, IComparable<T>
 {
-	public delegate void AmountChanged();
+	public delegate void AmountChanged(object sender);
 	public event AmountChanged OnAmountChanged;
 
 	[SerializeField]
@@ -32,7 +32,7 @@ public abstract class Accumulator<T> where T : struct, IComparable<T>
 		if (amount.CompareTo(writeOffAmount) >= 0)
 		{
 			amount = Subtract(amount, writeOffAmount);
-			OnAmountChanged?.Invoke();
+			OnAmountChanged?.Invoke(this);
 
 			return true;
 		}
@@ -50,7 +50,7 @@ public abstract class Accumulator<T> where T : struct, IComparable<T>
 		}
 
 		amount = Add(amount, depositAmount);
-		OnAmountChanged?.Invoke();
+		OnAmountChanged?.Invoke(this);
 	}
 
 	protected abstract T Add(T lhs, T rhs);

@@ -14,9 +14,9 @@ public class HeaderViewController : MonoBehaviour
 		flopcoinSource = Player.Instance.FlopcoinAccumulator;
 		informationSource = Player.Instance.InformationAccumulator;
 
-		flopcoinSource.OnAmountChanged += UpdateFlopcoinAmountText;
+		flopcoinSource.OnAmountChanged += (object sender) => UpdateFlopcoinAmountText();
 
-		informationSource.OnAmountChanged += UpdateInformationAmountText;
+		informationSource.OnAmountChanged += (object sender) => UpdateInformationAmountText();
 
 		UpdateFlopcoinAmountText();
 		UpdateInformationAmountText();

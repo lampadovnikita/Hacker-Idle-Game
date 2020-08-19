@@ -7,19 +7,17 @@ public class GeneratorProductionMediator : MonoBehaviour
 	private List<Generator> generators = default;
 
 	private FloatAccumulator productionDestination;
-	
+
 	private void Start()
 	{
 		productionDestination = Player.Instance.InformationAccumulator;
 
 		foreach (Generator g in generators)
 		{
-			g.OnProduced += OnGeneratorProduced;
+			g.OnProduced += (object sender, float producedAmount) =>
+			{
+				productionDestination.Deposit(producedAmount);
+			};
 		}
-	}
-
-	private void OnGeneratorProduced(float producedAmount)
-	{
-		productionDestination.Deposit(producedAmount);
 	}
 }
