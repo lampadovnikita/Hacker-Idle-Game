@@ -22,7 +22,14 @@ public class GeneratorViewController : MonoBehaviour
 	{
 		moneySource = Player.Instance.FlopcoinAccumulator;
 
+		// Need to update interactability in both cases,
+		// because if update only when the amount of money was changed there possible bug
+		// when the money has already been writed off, but the generator still hasn't changed its state.
+		// So there still old price to upgrade generator, but actual amount of money may be smaller than 
+		// real amount to upgrade
 		generator.OnUpgraded += (object sender) => UpdateUpgradeButtonInteractability();
+		moneySource.OnAmountChanged += (object sender) => UpdateUpgradeButtonInteractability();
+
 		generator.OnBeginProduce += (object sender) => RestartProductionProgressVisualization();
 
 		generatorView.SetProductionProgressMaxValue(generator.ProductionTime);
