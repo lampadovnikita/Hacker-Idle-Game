@@ -14,7 +14,7 @@ public class GeneratorProductionMediator : MonoBehaviour
 
 		foreach (Generator g in generators)
 		{
-			g.OnProduced += (object sender, float producedAmount) =>
+			g.OnFinishProduce += (object sender, float producedAmount) =>
 			{
 				productionDestination.Deposit(producedAmount);
 			};

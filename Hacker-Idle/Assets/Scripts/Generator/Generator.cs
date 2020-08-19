@@ -6,8 +6,8 @@ public class Generator : MonoBehaviour
 	public delegate void BeginProduce(object sender);
 	public event BeginProduce OnBeginProduce;
 
-	public delegate void Produced(object sender, float producedAmount);
-	public event Produced OnProduced;
+	public delegate void FinishProduce(object sender, float producedAmount);
+	public event FinishProduce OnFinishProduce;
 
 	public delegate void Upgraded(object sender);
 	public event Upgraded OnUpgraded;
@@ -86,7 +86,7 @@ public class Generator : MonoBehaviour
 
 			Debug.Log(gameObject.name + " produce " + productionAmount + " CU");
 
-			OnProduced?.Invoke(this, productionAmount);
+			OnFinishProduce?.Invoke(this, productionAmount);
 		}
 	}
 
