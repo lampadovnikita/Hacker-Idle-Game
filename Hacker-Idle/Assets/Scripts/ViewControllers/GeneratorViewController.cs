@@ -11,13 +11,6 @@ public class GeneratorViewController : MonoBehaviour
 
 	private FloatAccumulator moneySource;
 
-	private float productionProgressTime;
-
-	private void Awake()
-	{
-		productionProgressTime = 0f;
-	}
-
 	private void Start()
 	{
 		moneySource = Player.Instance.FlopcoinAccumulator;
@@ -30,12 +23,15 @@ public class GeneratorViewController : MonoBehaviour
 		generator.OnUpgraded += (object sender) => UpdateUpgradeButtonInteractability();
 		moneySource.OnAmountChanged += (object sender) => UpdateUpgradeButtonInteractability();
 
-		generator.OnBeginProduce += (object sender) => RestartProductionProgressVisualization();
-
-		generatorView.SetProductionProgressMaxValue(generator.ProductionTime);
+		generatorView.SetProductionProgressMaxValue(generator.ProductionCycleTime);
 
 		UpdateGeneratorViewInfo();
 		UpdateUpgradeButtonInteractability();
+	}
+
+	private void Update()
+	{
+		generatorView.SetProductionProgressValue(generator.ProductionProgressTime);
 	}
 
 	public void OnUpgradeButtonPressed()
@@ -83,36 +79,5 @@ public class GeneratorViewController : MonoBehaviour
 		{
 			return false;
 		}
-	}
-
-	private void RestartProductionProgressVisualization()
-	{
-		// Check this to prevent coroutine invocation from inactive object
-		if (gameObject.activeInHierarchy == true)
-		{ 
-			// To prevent errors with multiple adjustment of the progress value
-			// if the generator starts a new production cycle earlier than the
-			// previous cycle is fully visualized
-			StopCoroutine(VisualizeProductionProgressCycle());
-
-			StartCoroutine(VisualizeProductionProgressCycle());
-		}
-	}
-
-	// Coroutine to visualize 1 cycle of generators production
-	private IEnumerator VisualizeProductionProgressCycle()
-	{
-		productionProgressTime = 0f;
-		while (productionProgressTime <= generator.ProductionTime)
-		{
-			generatorView.SetProductionProgressValue(productionProgressTime);
-
-			yield return null;
-
-			productionProgressTime += Time.deltaTime;
-		}
-
-		// At the end reset progress value to 0
-		generatorView.SetProductionProgressValue(0f);
 	}
 }

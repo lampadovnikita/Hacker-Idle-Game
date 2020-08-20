@@ -21,19 +21,25 @@ public class Generator : MonoBehaviour
 	private float upgradeCost;
 
 	// Time of one production cycle duration
-	private float productionTime;
+	private float productionCycleTime;
 
 	// Amount of produced units per 1 production cycle
 	private float productionAmount;
+
+	private float productionProgressTime;
+
+	private bool isProductionInProgress;
 
 	#region Properties
 	public int Level => level;
 
 	public float UpgradeCost => upgradeCost;
 
-	public float ProductionTime => productionTime;
+	public float ProductionCycleTime => productionCycleTime;
 
 	public float ProductionAmount => productionAmount;
+
+	public float ProductionProgressTime => productionProgressTime;
 	#endregion
 
 	private void Awake()
@@ -41,13 +47,27 @@ public class Generator : MonoBehaviour
 		InitializeProductionAmount();
 		InitializeUpgradeCost();
 		InitializeProductionTime();
+
+		isProductionInProgress = false;
 	}
 
-	private void Start()
+	private void FixedUpdate()
 	{
 		if (IsPurchased() == true)
-		{
-			StartCoroutine(ProduceLoopCoroutine());
+		{ 
+			if (isProductionInProgress == true)
+			{
+				productionProgressTime += Time.deltaTime;
+				if (productionProgressTime > productionCycleTime)
+				{
+					FinishProductionCycle();
+					Debug.Log(gameObject.name + " produce " + productionAmount + " CU");
+				}
+			}
+			else
+			{
+				BeginProductionCycle();
+			}
 		}
 	}
 
@@ -69,25 +89,25 @@ public class Generator : MonoBehaviour
 		else if (level == 1)
 		{
 			productionAmount = baseData.BaseProductionAmount;
-
-			StartCoroutine(ProduceLoopCoroutine());
 		}
 
 		OnUpgraded?.Invoke(this);
 	}
 
-	private IEnumerator ProduceLoopCoroutine()
+	private void BeginProductionCycle()
 	{
-		while (true)
-		{
-			OnBeginProduce?.Invoke(this);
+		productionProgressTime = 0f;
+		isProductionInProgress = true;
 
-			yield return new WaitForSeconds(productionTime);
+		OnBeginProduce?.Invoke(this);
+	}
 
-			Debug.Log(gameObject.name + " produce " + productionAmount + " CU");
+	private void FinishProductionCycle()
+	{
+		productionProgressTime = productionCycleTime;
+		isProductionInProgress = false;
 
-			OnFinishProduce?.Invoke(this, productionAmount);
-		}
+		OnFinishProduce?.Invoke(this, productionAmount);
 	}
 
 	public bool IsPurchased()
@@ -129,6 +149,6 @@ public class Generator : MonoBehaviour
 
 	private void InitializeProductionTime()
 	{
-		productionTime = baseData.ProductionTime;
+		productionCycleTime = baseData.ProductionTime;
 	}
 }
