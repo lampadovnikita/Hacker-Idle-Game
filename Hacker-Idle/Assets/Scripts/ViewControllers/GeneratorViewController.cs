@@ -52,11 +52,6 @@ public class GeneratorViewController : MonoBehaviour
 		generatorView.SetLevelText(generator.Level.ToString());
 	}
 
-	private void OnGeneratorUpgraded(Generator sender)
-	{
-		UpdateUpgradeButtonInteractability();
-	}
-
 	private void UpdateUpgradeButtonInteractability()
 	{
 		if (HasEnoughMoney() == true)
