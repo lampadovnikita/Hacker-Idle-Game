@@ -30,7 +30,7 @@ public class TabGroup : MonoBehaviour
 	{
 		tabButtons.Add(tab);
 
-		if (tab.transform.GetSiblingIndex() == 0)
+		if (tab.transform.GetSiblingIndex() == 1)
 		{
 			OnTabSelected(tab);
 		}
