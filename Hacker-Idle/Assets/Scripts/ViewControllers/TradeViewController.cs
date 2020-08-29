@@ -6,7 +6,13 @@ public class TradeViewController : MonoBehaviour
     private TradeView tradeView = default;
 
 	[SerializeField]
+	private FloatResourceCode sellResourceCode = default;
+
+	[SerializeField]
 	private float sellAmount = default;
+
+	[SerializeField]
+	private FloatResourceCode buyResourceCode = default;
 
 	[SerializeField]
 	private float buyAmount = default;
@@ -16,12 +22,11 @@ public class TradeViewController : MonoBehaviour
 
 	private void Start()
 	{
-		sellAccumulator = Player.Instance.InformationAccumulator;
+		sellAccumulator = Player.Instance.GetFloatResourceAccumulator(sellResourceCode);
 
-		buyAccumulator = Player.Instance.FlopcoinAccumulator;
+		buyAccumulator = Player.Instance.GetFloatResourceAccumulator(buyResourceCode);
 
 		sellAccumulator.OnAmountChanged += (object sender) => UpdateTradeButtonInteractability();
-		
 		
 		tradeView.SetBuyAmountText(buyAmount.ToString());
 		tradeView.SetSellAmountText(sellAmount.ToString());

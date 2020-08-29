@@ -30,4 +30,20 @@ public class Player : MonoBehaviour
 
 		DontDestroyOnLoad(gameObject);
 	}
+
+	public FloatAccumulator GetFloatResourceAccumulator(FloatResourceCode code)
+	{
+		switch (code)
+		{
+			case FloatResourceCode.Flopcoin:
+				return FlopcoinAccumulator;
+
+			case FloatResourceCode.Information:
+				return InformationAccumulator;
+
+			default:
+				Debug.LogError("Unprocessed resource code!");
+				return null;
+		}
+	}
 }
