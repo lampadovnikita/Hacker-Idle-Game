@@ -1,28 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TradeView : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI sellPriceUGUI = default;
+    private TextMeshProUGUI sellAmountUGUI = default;
 
     [SerializeField]
-    private TextMeshProUGUI buyPriceUGUI = default;
+    private TextMeshProUGUI buyAmountUGUI = default;
 
     [SerializeField]
     private Button tradeButton = default;
 
-    public void SetSellPriceText(string text)
+    public void SetSellAmountText(string text)
     {
-        sellPriceUGUI.text = text;
+        sellAmountUGUI.text = text;
     }
 
-    public void SetBuyPriceText(string text)
+    public void SetBuyAmountText(string text)
     {
-        buyPriceUGUI.text = text;
+        buyAmountUGUI.text = text;
     }
 
     public void SetTradeButtonInteractability(bool isInteractable)

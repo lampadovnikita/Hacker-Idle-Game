@@ -6,10 +6,10 @@ public class TradeViewController : MonoBehaviour
     private TradeView tradeView = default;
 
 	[SerializeField]
-	private float sellPrice = default;
+	private float sellAmount = default;
 
 	[SerializeField]
-	private float buyPrice = default;
+	private float buyAmount = default;
 
 	private FloatAccumulator sellAccumulator;
 	private FloatAccumulator buyAccumulator;
@@ -23,23 +23,23 @@ public class TradeViewController : MonoBehaviour
 		sellAccumulator.OnAmountChanged += (object sender) => UpdateTradeButtonInteractability();
 		
 		
-		tradeView.SetBuyPriceText(buyPrice.ToString());
-		tradeView.SetSellPriceText(sellPrice.ToString());
+		tradeView.SetBuyAmountText(buyAmount.ToString());
+		tradeView.SetSellAmountText(sellAmount.ToString());
 	}
 
 	public void OnTradeButtonPressed()
 	{
-		bool isWrittedOff = sellAccumulator.AttemptWriteOff(sellPrice);
+		bool isWrittedOff = sellAccumulator.AttemptWriteOff(sellAmount);
 
 		if (isWrittedOff)
 		{
-			buyAccumulator.Deposit(buyPrice);
+			buyAccumulator.Deposit(buyAmount);
 		}
 	}
 
 	private void UpdateTradeButtonInteractability()
 	{
-		if (sellAccumulator.Amount >= sellPrice)
+		if (sellAccumulator.Amount >= sellAmount)
 		{
 			tradeView.SetTradeButtonInteractability(true);
 		}
