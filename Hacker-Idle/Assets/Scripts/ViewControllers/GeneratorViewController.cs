@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GeneratorViewController : MonoBehaviour
 {
@@ -25,6 +24,7 @@ public class GeneratorViewController : MonoBehaviour
 
 		generatorView.SetProductionProgressMaxValue(generator.ProductionCycleTime);
 
+		generatorView.SetActivityNameTetxt(generator.BaseData.ActivityName);
 		UpdateGeneratorViewInfo();
 		UpdateUpgradeButtonInteractability();
 	}

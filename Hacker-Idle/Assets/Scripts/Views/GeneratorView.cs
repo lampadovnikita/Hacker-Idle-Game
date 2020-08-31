@@ -8,6 +8,9 @@ public class GeneratorView : MonoBehaviour
 	private Button upgradeButton = default;
 
 	[SerializeField]
+	private TextMeshProUGUI activityNameUGUI = default;
+
+	[SerializeField]
 	private TextMeshProUGUI upgradeCostUGUI = default;
 
 	[SerializeField]
@@ -32,6 +35,11 @@ public class GeneratorView : MonoBehaviour
 	public void SetUpgradeButtonInteractability(bool isInteractable)
 	{
 		upgradeButton.interactable = isInteractable;
+	}
+
+	public void SetActivityNameTetxt(string text)
+	{
+		activityNameUGUI.text = text;
 	}
 
 	public void SetUpgradeCostText(string text)

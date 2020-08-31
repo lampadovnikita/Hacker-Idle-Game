@@ -4,6 +4,9 @@
 public class GeneratorBaseData : ScriptableObject
 {
 	[SerializeField]
+	private string activityName = "";
+
+	[SerializeField]
 	private float purchaseCost = 1f;
 
 	[SerializeField]
@@ -19,6 +22,8 @@ public class GeneratorBaseData : ScriptableObject
 	private float productionMultiplier = 1f;
 
 	#region Properties
+	public string ActivityName => activityName;
+
 	public float PurchaseCost => purchaseCost;
 
 	public float UpgradeCostGrowthRate => upgradeCostGrowthRate;

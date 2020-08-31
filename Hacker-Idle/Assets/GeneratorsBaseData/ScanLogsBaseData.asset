@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db737cc021a6de0478d8adcf4a412440, type: 3}
-  m_Name: SampleGenerator1BaseData
+  m_Name: ScanLogsBaseData
   m_EditorClassIdentifier: 
+  activityName: Scan logs
   purchaseCost: 3.7
   upgradeCostGrowthRate: 1.07
-  baseProductionRate: 1.6
+  baseProductionAmount: 1
   productionTime: 0.9
   productionMultiplier: 1

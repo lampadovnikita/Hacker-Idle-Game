@@ -31,6 +31,8 @@ public class Generator : MonoBehaviour
 	private bool isProductionInProgress;
 
 	#region Properties
+	public GeneratorBaseData BaseData => baseData;
+
 	public int Level => level;
 
 	public float UpgradeCost => upgradeCost;

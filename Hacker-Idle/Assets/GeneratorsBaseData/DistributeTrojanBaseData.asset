@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db737cc021a6de0478d8adcf4a412440, type: 3}
-  m_Name: SampleGenerator2BaseData
+  m_Name: DistributeTrojanBaseData
   m_EditorClassIdentifier: 
+  activityName: Distribute Trojan
   purchaseCost: 60
   upgradeCostGrowthRate: 1.15
   baseProductionAmount: 60

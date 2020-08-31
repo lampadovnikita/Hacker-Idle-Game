@@ -1023,7 +1023,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: fe6896eea6903804f944708b71d3fce5, type: 2}
     - target: {fileID: 4910789463967859624, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_Name
-      value: Sample Generator 2
+      value: DistributeTrojan Generator
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
@@ -1085,11 +1085,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 538.8505
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -219.38306
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1105,7 +1105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1113,7 +1113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_Pivot.x
@@ -1125,7 +1125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253138, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_Name
-      value: Generator List item 1
+      value: ScanLogs Generator List Item
       objectReference: {fileID: 0}
     - target: {fileID: 5570389750213974011, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: generator
@@ -2137,11 +2137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 538.8505
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -618.1492
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2157,7 +2157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2165,7 +2165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_Pivot.x
@@ -2177,7 +2177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253138, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_Name
-      value: Generator List item 2
+      value: DistributeTrojan Generator List Item
       objectReference: {fileID: 0}
     - target: {fileID: 3871965942934253138, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_IsActive
@@ -2429,7 +2429,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 43c9ca81b6c5f62488e1f74d5b57b740, type: 2}
     - target: {fileID: 4910789463967859624, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_Name
-      value: Sample Generator 1
+      value: ScanLogs Generator
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
