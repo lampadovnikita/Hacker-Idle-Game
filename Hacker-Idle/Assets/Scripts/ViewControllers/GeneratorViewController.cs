@@ -10,10 +10,11 @@ public class GeneratorViewController : MonoBehaviour
 
 	private FloatAccumulator moneySource;
 
+	// Next time you need to update the remainig time
 	private float timeToUpdateReaminingTime;
 
-	// Update remaining time each second
-	private float remainingTimeUpdatePeriod = 1f;
+	// Time period between the remaining time updates
+	private float remainingTimeUpdatePeriod = 0.1f;
 
 	private void Start()
 	{
@@ -38,11 +39,14 @@ public class GeneratorViewController : MonoBehaviour
 
 	private void Update()
 	{
-		generatorView.SetProductionProgressValue(generator.ProductionProgressTime);
-	
-		if (Time.time > timeToUpdateReaminingTime)
-		{
-			UpdateRemainingTime();
+		if (generator.IsPurchased() == true)
+		{ 
+			generatorView.SetProductionProgressValue(generator.ProductionProgressTime);
+		
+			if (Time.time > timeToUpdateReaminingTime)
+			{
+				UpdateRemainingTime();
+			}
 		}
 	}
 
@@ -67,7 +71,7 @@ public class GeneratorViewController : MonoBehaviour
 	private void UpdateRemainingTime()
 	{
 		float remainingTime = generator.ProductionCycleTime - generator.ProductionProgressTime;
-		generatorView.SetRemainingTimeText(remainingTime.ToString());
+		generatorView.SetRemainingTimeText(string.Format("{0:F0} {1}", remainingTime, "s"));
 
 		timeToUpdateReaminingTime = Time.time + remainingTimeUpdatePeriod;
 	}
