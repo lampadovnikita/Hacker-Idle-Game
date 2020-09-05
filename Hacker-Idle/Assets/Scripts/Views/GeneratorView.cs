@@ -20,6 +20,9 @@ public class GeneratorView : MonoBehaviour
 	private TextMeshProUGUI levelUGUI = default;
 
 	[SerializeField]
+	private TextMeshProUGUI remainingTimeUGUI = default;
+
+	[SerializeField]
 	private Slider productionProgressSlider = default;
 
 	public void SetProductionProgressValue(float value)
@@ -55,5 +58,10 @@ public class GeneratorView : MonoBehaviour
 	public void SetLevelText(string text)
 	{
 		levelUGUI.text = text;
+	}
+
+	public void SetRemainingTimeText(string text)
+	{
+		remainingTimeUGUI.text = text;
 	}
 }

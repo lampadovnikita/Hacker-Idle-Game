@@ -10,6 +10,11 @@ public class GeneratorViewController : MonoBehaviour
 
 	private FloatAccumulator moneySource;
 
+	private float timeToUpdateReaminingTime;
+
+	// Update remaining time each second
+	private float remainingTimeUpdatePeriod = 1f;
+
 	private void Start()
 	{
 		moneySource = Player.Instance.FlopcoinAccumulator;
@@ -22,6 +27,8 @@ public class GeneratorViewController : MonoBehaviour
 		generator.OnUpgraded += (object sender) => UpdateUpgradeButtonInteractability();
 		moneySource.OnAmountChanged += (object sender) => UpdateUpgradeButtonInteractability();
 
+		generator.OnBeginProduce += (object sender) => UpdateRemainingTime();
+
 		generatorView.SetProductionProgressMaxValue(generator.ProductionCycleTime);
 
 		generatorView.SetActivityNameTetxt(generator.BaseData.ActivityName);
@@ -32,6 +39,11 @@ public class GeneratorViewController : MonoBehaviour
 	private void Update()
 	{
 		generatorView.SetProductionProgressValue(generator.ProductionProgressTime);
+	
+		if (Time.time > timeToUpdateReaminingTime)
+		{
+			UpdateRemainingTime();
+		}
 	}
 
 	public void OnUpgradeButtonPressed()
@@ -50,6 +62,14 @@ public class GeneratorViewController : MonoBehaviour
 		generatorView.SetUpgradeCostText(FloatAccumulator.ToString(generator.UpgradeCost));
 		generatorView.SetProductionRateText(FloatAccumulator.ToString(generator.ProductionAmount));
 		generatorView.SetLevelText(generator.Level.ToString());
+	}
+
+	private void UpdateRemainingTime()
+	{
+		float remainingTime = generator.ProductionCycleTime - generator.ProductionProgressTime;
+		generatorView.SetRemainingTimeText(remainingTime.ToString());
+
+		timeToUpdateReaminingTime = Time.time + remainingTimeUpdatePeriod;
 	}
 
 	private void UpdateUpgradeButtonInteractability()
