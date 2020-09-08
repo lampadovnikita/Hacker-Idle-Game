@@ -1,8 +1,11 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
+	// To see the formulas for calculating the cost of an upgrade
+	// and the amount of resources produced see the comments to the methods:
+	// InitializeProductionAmount and InitializeUpgradeCost
+
 	public delegate void BeginProduce(object sender);
 	public event BeginProduce OnBeginProduce;
 
@@ -126,6 +129,10 @@ public class Generator : MonoBehaviour
 
 	private void InitializeProductionAmount()
 	{
+		// productionAmount formula:
+		// productionAmount = baseProductionAmount * level * someMultipliers
+		// someMultipliers isn't actual variable name, but any multipliers that may occur
+
 		if (level == 1)
 		{
 			productionAmount = baseData.BaseProductionAmount;
@@ -139,6 +146,9 @@ public class Generator : MonoBehaviour
 
 	private void InitializeUpgradeCost()
 	{
+		// upgradeCost formula:
+		// upgradeCost = purchaseCost * upgradeCostGrowthRate^level
+
 		if (IsPurchased() == true)
 		{
 			upgradeCost = baseData.PurchaseCost * Mathf.Pow(baseData.UpgradeCostGrowthRate, level);
