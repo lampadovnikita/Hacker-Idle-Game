@@ -17,6 +17,8 @@ public class AmountMultiplierViewController : MonoBehaviour
 
 	private int currentMultiplierIndex;
 
+	public int CurrentMultiplier => amountMultipliers[currentMultiplierIndex];
+
 	private void Awake()
 	{
 		currentMultiplierIndex = 0;
@@ -43,10 +45,9 @@ public class AmountMultiplierViewController : MonoBehaviour
 			currentMultiplierIndex++;
 		}
 
-		int newMultiplier = amountMultipliers[currentMultiplierIndex];
-		string amountMultiplierText = MULTIPLIER_TEXT_PREFIX + newMultiplier;
+		string amountMultiplierText = MULTIPLIER_TEXT_PREFIX + CurrentMultiplier;
 		amountMultiplierView.SetAmountMultiplierText(amountMultiplierText);
 
-		OnAmountMultiplierChanged?.Invoke(this, newMultiplier);
+		OnAmountMultiplierChanged?.Invoke(this, CurrentMultiplier);
 	}
 }

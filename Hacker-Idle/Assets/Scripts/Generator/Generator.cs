@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor.UIElements;
+using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
@@ -59,7 +60,7 @@ public class Generator : MonoBehaviour
 	private void FixedUpdate()
 	{
 		if (IsPurchased() == true)
-		{ 
+		{
 			if (isProductionInProgress == true)
 			{
 				productionProgressTime += Time.deltaTime;
@@ -81,6 +82,17 @@ public class Generator : MonoBehaviour
 		Validator.ValidateNonNegative(ref level);
 	}
 
+	public void Upgrade(int levelsAmount)
+	{
+		level += levelsAmount;
+
+		upgradeCost *= Mathf.Pow(baseData.UpgradeCostGrowthRate, levelsAmount);
+
+		productionAmount += baseData.BaseProductionAmount * levelsAmount;
+
+		OnUpgraded?.Invoke(this);
+	}
+
 	public void Upgrade()
 	{
 		level++;
@@ -97,6 +109,12 @@ public class Generator : MonoBehaviour
 		}
 
 		OnUpgraded?.Invoke(this);
+	}
+
+	public float GetUpgradeCost(int levelsAmount)
+	{
+		return upgradeCost * (Mathf.Pow(baseData.UpgradeCostGrowthRate, levelsAmount) - 1) /
+			(baseData.UpgradeCostGrowthRate - 1);
 	}
 
 	private void BeginProductionCycle()
