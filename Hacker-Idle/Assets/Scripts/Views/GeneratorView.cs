@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class GeneratorView : MonoBehaviour
 {
+	public delegate void UpgradeButtonClicked(object sender);
+	public event UpgradeButtonClicked OnUpgradeButtonClicked;
+
 	[SerializeField]
 	private Button upgradeButton = default;
 
@@ -24,6 +27,14 @@ public class GeneratorView : MonoBehaviour
 
 	[SerializeField]
 	private Slider productionProgressSlider = default;
+
+	private void Awake()
+	{
+		upgradeButton.onClick.AddListener
+		(
+			() => OnUpgradeButtonClicked?.Invoke(this)
+		);
+	}
 
 	public void SetProductionProgressValue(float value)
 	{

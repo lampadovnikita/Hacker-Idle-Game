@@ -26,7 +26,9 @@ public class TradeViewController : MonoBehaviour
 		buyAccumulator = Player.Instance.GetFloatResourceAccumulator(buyResourceCode);
 
 		sellAccumulator.OnAmountChanged += (object sender) => UpdateTradeButtonInteractability();
-		
+
+		tradeView.OnTradeButtonClicked += (object sender) => OnTradeButtonPressed();
+
 		tradeView.SetBuyAmountText(buyAmount.ToString());
 		tradeView.SetSellAmountText(sellAmount.ToString());
 

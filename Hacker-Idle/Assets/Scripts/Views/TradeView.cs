@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class TradeView : MonoBehaviour
 {
+    public delegate void TradeButtonClicked(object sender);
+    public event TradeButtonClicked OnTradeButtonClicked;
+
     [SerializeField]
     private TextMeshProUGUI sellAmountUGUI = default;
 
@@ -13,7 +16,15 @@ public class TradeView : MonoBehaviour
     [SerializeField]
     private Button tradeButton = default;
 
-    public void SetSellAmountText(string text)
+	private void Awake()
+	{
+		tradeButton.onClick.AddListener
+        (
+            () => OnTradeButtonClicked?.Invoke(this)    
+        );
+	}
+
+	public void SetSellAmountText(string text)
     {
         sellAmountUGUI.text = text;
     }

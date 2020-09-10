@@ -479,6 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   generatorView: {fileID: 3871965942934253136}
   generator: {fileID: 0}
+  upgradeAmountMultiplierViewController: {fileID: 0}
 --- !u!1 &3871965943243758326
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,19 +599,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3871965943243758323}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5570389750213974011}
-        m_TargetAssemblyTypeName: GeneratorUIController, Assembly-CSharp
-        m_MethodName: OnUpgradeButtonPressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &3871965943995453880
 GameObject:
   m_ObjectHideFlags: 0

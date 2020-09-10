@@ -27,6 +27,8 @@ public class GeneratorViewController : MonoBehaviour
 
 		generator.OnBeginProduce += (object sender) => UpdateRemainingTime();
 
+		generatorView.OnUpgradeButtonClicked += (object sender) => OnUpgradeButtonPressed();
+
 		upgradeAmountMultiplierViewController.OnAmountMultiplierChanged +=
 			(object sender, int newMultiplier) => OnUpgradeMultiplierChanged();
 
