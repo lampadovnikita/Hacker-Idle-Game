@@ -93,6 +93,8 @@ public class Generator : MonoBehaviour
 
 	public float GetUpgradeCost(int levelsAmount)
 	{
+		// This expression follows from the formula for the sum of n elements of the geometric progression.
+		// And the sequence of upgrade costs is just a geometric progression
 		return nextUpgradeCost * (Mathf.Pow(baseData.UpgradeCostGrowthRate, levelsAmount) - 1) /
 			(baseData.UpgradeCostGrowthRate - 1);
 	}
