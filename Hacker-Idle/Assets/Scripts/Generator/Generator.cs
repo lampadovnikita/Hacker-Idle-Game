@@ -22,7 +22,7 @@ public class Generator : MonoBehaviour
 	[SerializeField]
 	private int level = 0;
 
-	private float upgradeCost;
+	private float nextUpgradeCost;
 
 	// Time of one production cycle duration
 	private float productionCycleTime;
@@ -38,8 +38,6 @@ public class Generator : MonoBehaviour
 	public GeneratorBaseData BaseData => baseData;
 
 	public int Level => level;
-
-	public float UpgradeCost => upgradeCost;
 
 	public float ProductionCycleTime => productionCycleTime;
 
@@ -86,34 +84,16 @@ public class Generator : MonoBehaviour
 	{
 		level += levelsAmount;
 
-		upgradeCost *= Mathf.Pow(baseData.UpgradeCostGrowthRate, levelsAmount);
+		nextUpgradeCost *= Mathf.Pow(baseData.UpgradeCostGrowthRate, levelsAmount);
 
 		productionAmount += baseData.BaseProductionAmount * levelsAmount;
 
 		OnUpgraded?.Invoke(this);
 	}
 
-	public void Upgrade()
-	{
-		level++;
-
-		upgradeCost *= baseData.UpgradeCostGrowthRate;
-
-		if (level > 1)
-		{
-			productionAmount += baseData.BaseProductionAmount * baseData.ProductionMultiplier;
-		}
-		else if (level == 1)
-		{
-			productionAmount = baseData.BaseProductionAmount;
-		}
-
-		OnUpgraded?.Invoke(this);
-	}
-
 	public float GetUpgradeCost(int levelsAmount)
 	{
-		return upgradeCost * (Mathf.Pow(baseData.UpgradeCostGrowthRate, levelsAmount) - 1) /
+		return nextUpgradeCost * (Mathf.Pow(baseData.UpgradeCostGrowthRate, levelsAmount) - 1) /
 			(baseData.UpgradeCostGrowthRate - 1);
 	}
 
@@ -169,11 +149,11 @@ public class Generator : MonoBehaviour
 
 		if (IsPurchased() == true)
 		{
-			upgradeCost = baseData.PurchaseCost * Mathf.Pow(baseData.UpgradeCostGrowthRate, level);
+			nextUpgradeCost = baseData.PurchaseCost * Mathf.Pow(baseData.UpgradeCostGrowthRate, level);
 		}
 		else
 		{
-			upgradeCost = baseData.PurchaseCost;
+			nextUpgradeCost = baseData.PurchaseCost;
 		}
 	}
 
