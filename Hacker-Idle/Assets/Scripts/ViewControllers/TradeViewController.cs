@@ -2,8 +2,8 @@
 
 public class TradeViewController : MonoBehaviour
 {
-    [SerializeField]
-    private TradeView tradeView = default;
+	[SerializeField]
+	private TradeView tradeView = default;
 
 	[SerializeField]
 	private FloatResourceCode sellResourceCode = default;
@@ -17,6 +17,9 @@ public class TradeViewController : MonoBehaviour
 	[SerializeField]
 	private float buyAmount = default;
 
+	[SerializeField]
+	private AmountMultiplierViewController tradeAmountMultiplierViewController = default;
+
 	private FloatAccumulator sellAccumulator;
 	private FloatAccumulator buyAccumulator;
 
@@ -29,29 +32,36 @@ public class TradeViewController : MonoBehaviour
 
 		tradeView.OnTradeButtonClicked += (object sender) => OnTradeButtonPressed();
 
-		tradeView.SetBuyAmountText(buyAmount.ToString());
-		tradeView.SetSellAmountText(sellAmount.ToString());
-
-		UpdateTradeButtonInteractability();
+		tradeAmountMultiplierViewController.OnAmountMultiplierChanged +=
+			(object sender, int newAmount) => UpdateTradeViewInfo();
 	}
 
 	public void OnTradeButtonPressed()
 	{
-		bool isWrittedOff = sellAccumulator.AttemptWriteOff(sellAmount);
+		bool isWrittedOff = sellAccumulator.AttemptWriteOff(sellAmount *
+			tradeAmountMultiplierViewController.CurrentMultiplier);
 
-		if (isWrittedOff)
+		if (isWrittedOff == true)
 		{
-			buyAccumulator.Deposit(buyAmount);
+			buyAccumulator.Deposit(buyAmount * tradeAmountMultiplierViewController.CurrentMultiplier);
 		}
+	}
+
+	private void UpdateTradeViewInfo()
+	{
+		tradeView.SetBuyAmountText((buyAmount * tradeAmountMultiplierViewController.CurrentMultiplier).ToString());
+		tradeView.SetSellAmountText((sellAmount * tradeAmountMultiplierViewController.CurrentMultiplier).ToString());
+
+		UpdateTradeButtonInteractability();
 	}
 
 	private void UpdateTradeButtonInteractability()
 	{
-		if (sellAccumulator.Amount >= sellAmount)
+		if (sellAccumulator.Amount >= sellAmount * tradeAmountMultiplierViewController.CurrentMultiplier)
 		{
 			tradeView.SetTradeButtonInteractability(true);
 		}
-		else 
+		else
 		{
 			tradeView.SetTradeButtonInteractability(false);
 		}
