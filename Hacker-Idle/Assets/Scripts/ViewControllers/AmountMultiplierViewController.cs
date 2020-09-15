@@ -13,41 +13,21 @@ public class AmountMultiplierViewController : MonoBehaviour
 	private AmountMultiplierView amountMultiplierView = default;
 
 	[SerializeField]
-	private List<int> amountMultipliers = default;
-
-	private int currentMultiplierIndex;
-
-	public int CurrentMultiplier => amountMultipliers[currentMultiplierIndex];
-
-	private void Awake()
-	{
-		currentMultiplierIndex = 0;
-
-		if (amountMultipliers.Count == 0)
-		{
-			Debug.LogError("Empty multipliers list!");
-		}
-	}
+	private AmountMultiplier amountMultiplier = default;
 
 	private void Start()
 	{
-		amountMultiplierView.OnAmountMultiplierButtonClicked += (object sender) => ChangeAmountMultiplier();
+		amountMultiplierView.OnAmountMultiplierButtonClicked +=
+			(object sender) => amountMultiplier.ShiftAmountMultiplier();
+
+		amountMultiplier.OnAmountMultiplierChanged += (object sender) => UpdateAmountMultiplierView();
 	}
 
-	private void ChangeAmountMultiplier()
+	private void UpdateAmountMultiplierView()
 	{
-		if (currentMultiplierIndex >= (amountMultipliers.Count - 1))
-		{
-			currentMultiplierIndex = 0;
-		}
-		else
-		{
-			currentMultiplierIndex++;
-		}
-
-		string amountMultiplierText = MULTIPLIER_TEXT_PREFIX + CurrentMultiplier;
+		string amountMultiplierText = MULTIPLIER_TEXT_PREFIX + amountMultiplier.CurrentMultiplier;
 		amountMultiplierView.SetAmountMultiplierText(amountMultiplierText);
 
-		OnAmountMultiplierChanged?.Invoke(this, CurrentMultiplier);
+		OnAmountMultiplierChanged?.Invoke(this, amountMultiplier.CurrentMultiplier);
 	}
 }

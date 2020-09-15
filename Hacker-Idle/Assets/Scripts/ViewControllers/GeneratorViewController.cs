@@ -9,7 +9,7 @@ public class GeneratorViewController : MonoBehaviour
 	private Generator generator = default;
 
 	[SerializeField]
-	private AmountMultiplierViewController upgradeAmountMultiplierViewController = default;
+	private AmountMultiplier upgradeAmountMultiplier = default;
 
 	private FloatAccumulator moneySource;
 
@@ -29,8 +29,8 @@ public class GeneratorViewController : MonoBehaviour
 
 		generatorView.OnUpgradeButtonClicked += (object sender) => OnUpgradeButtonPressed();
 
-		upgradeAmountMultiplierViewController.OnAmountMultiplierChanged +=
-			(object sender, int newMultiplier) => OnUpgradeMultiplierChanged();
+		upgradeAmountMultiplier.OnAmountMultiplierChanged +=
+			(object sender) => OnUpgradeMultiplierChanged();
 
 		generatorView.SetProductionProgressMaxValue(generator.ProductionCycleTime);
 
@@ -53,7 +53,7 @@ public class GeneratorViewController : MonoBehaviour
 
 	public void OnUpgradeButtonPressed()
 	{
-		int amountOfUpgrades = upgradeAmountMultiplierViewController.CurrentMultiplier;
+		int amountOfUpgrades = upgradeAmountMultiplier.CurrentMultiplier;
 
 		bool isWritedOff = moneySource.AttemptWriteOff(generator.GetUpgradeCost(amountOfUpgrades));
 
@@ -84,7 +84,7 @@ public class GeneratorViewController : MonoBehaviour
 	private void UpdateUpgradeCost()
 	{
 		generatorView.SetUpgradeCostText(FloatAccumulator.ToString(
-			generator.GetUpgradeCost(upgradeAmountMultiplierViewController.CurrentMultiplier)));
+			generator.GetUpgradeCost(upgradeAmountMultiplier.CurrentMultiplier)));
 	}
 
 	private void UpdateRemainingTime()
@@ -109,7 +109,7 @@ public class GeneratorViewController : MonoBehaviour
 
 	private bool HasEnoughMoney()
 	{
-		if (moneySource.Amount > generator.GetUpgradeCost(upgradeAmountMultiplierViewController.CurrentMultiplier))
+		if (moneySource.Amount > generator.GetUpgradeCost(upgradeAmountMultiplier.CurrentMultiplier))
 		{
 			return true;
 		}

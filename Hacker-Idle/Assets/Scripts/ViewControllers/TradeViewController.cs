@@ -18,7 +18,7 @@ public class TradeViewController : MonoBehaviour
 	private float buyAmount = default;
 
 	[SerializeField]
-	private AmountMultiplierViewController tradeAmountMultiplierViewController = default;
+	private AmountMultiplier tradeAmountMultiplier = default;
 
 	private FloatAccumulator sellAccumulator;
 	private FloatAccumulator buyAccumulator;
@@ -32,8 +32,8 @@ public class TradeViewController : MonoBehaviour
 
 		tradeView.OnTradeButtonClicked += (object sender) => OnTradeButtonPressed();
 
-		tradeAmountMultiplierViewController.OnAmountMultiplierChanged +=
-			(object sender, int newAmount) => UpdateTradeViewInfo();
+		tradeAmountMultiplier.OnAmountMultiplierChanged +=
+			(object sender) => UpdateTradeViewInfo();
 
 		UpdateTradeViewInfo();
 	}
@@ -41,25 +41,25 @@ public class TradeViewController : MonoBehaviour
 	public void OnTradeButtonPressed()
 	{
 		bool isWrittedOff = sellAccumulator.AttemptWriteOff(sellAmount *
-			tradeAmountMultiplierViewController.CurrentMultiplier);
+			tradeAmountMultiplier.CurrentMultiplier);
 
 		if (isWrittedOff == true)
 		{
-			buyAccumulator.Deposit(buyAmount * tradeAmountMultiplierViewController.CurrentMultiplier);
+			buyAccumulator.Deposit(buyAmount * tradeAmountMultiplier.CurrentMultiplier);
 		}
 	}
 
 	private void UpdateTradeViewInfo()
 	{
-		tradeView.SetBuyAmountText((buyAmount * tradeAmountMultiplierViewController.CurrentMultiplier).ToString());
-		tradeView.SetSellAmountText((sellAmount * tradeAmountMultiplierViewController.CurrentMultiplier).ToString());
+		tradeView.SetBuyAmountText((buyAmount * tradeAmountMultiplier.CurrentMultiplier).ToString());
+		tradeView.SetSellAmountText((sellAmount * tradeAmountMultiplier.CurrentMultiplier).ToString());
 
 		UpdateTradeButtonInteractability();
 	}
 
 	private void UpdateTradeButtonInteractability()
 	{
-		if (sellAccumulator.Amount >= sellAmount * tradeAmountMultiplierViewController.CurrentMultiplier)
+		if (sellAccumulator.Amount >= sellAmount * tradeAmountMultiplier.CurrentMultiplier)
 		{
 			tradeView.SetTradeButtonInteractability(true);
 		}

@@ -229,7 +229,7 @@ RectTransform:
   - {fileID: 470503643}
   - {fileID: 178408378}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -278,7 +278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4910789463967859542, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4910789463967859542, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -343,7 +343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4910789463967859542, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4910789463967859542, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -501,6 +501,10 @@ PrefabInstance:
       propertyPath: tradeAmountMultiplierViewController
       value: 
       objectReference: {fileID: 260804091}
+    - target: {fileID: 5285665006725481969, guid: 75d9f8da921a2f34498c91b7a34f56a5, type: 3}
+      propertyPath: tradeAmountMultiplier
+      value: 
+      objectReference: {fileID: 524253390}
     - target: {fileID: 5285665006725481970, guid: 75d9f8da921a2f34498c91b7a34f56a5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -600,6 +604,38 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5285665006725481970, guid: 75d9f8da921a2f34498c91b7a34f56a5, type: 3}
   m_PrefabInstance: {fileID: 295088105}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &310622689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 310622690}
+  m_Layer: 0
+  m_Name: Amount Multipliers Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &310622690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310622689}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 754043763}
+  - {fileID: 524253391}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &321988908
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +793,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470503642}
   m_CullTransparentMesh: 0
+--- !u!1 &524253389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 524253391}
+  - component: {fileID: 524253390}
+  m_Layer: 0
+  m_Name: Trade Amount Multiplier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &524253390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524253389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc328117067d744b9abbfde8ec0b6a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountMultipliers: 01000000190000003200000064000000
+--- !u!4 &524253391
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524253389}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 310622690}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &638721568 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7692333823112879282, guid: 80bfc21b70009bb45aaa15348e22c106, type: 3}
@@ -925,6 +1005,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710191887}
   m_CullTransparentMesh: 0
+--- !u!1 &754043761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 754043763}
+  - component: {fileID: 754043762}
+  m_Layer: 0
+  m_Name: Upgrade Amount Multiplier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &754043762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754043761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc328117067d744b9abbfde8ec0b6a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountMultipliers: 010000000a000000190000003200000064000000
+--- !u!4 &754043763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754043761}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 310622690}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &851204909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,7 +1252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4910789463967859542, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4910789463967859542, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1281,7 +1405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4910789463967859542, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4910789463967859542, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1426,6 +1550,10 @@ PrefabInstance:
       propertyPath: upgradeAmountMultiplierViewController
       value: 
       objectReference: {fileID: 1186103543}
+    - target: {fileID: 5570389750213974011, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: upgradeAmountMultiplier
+      value: 
+      objectReference: {fileID: 754043762}
     - target: {fileID: 6860083772673712971, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.0009613037
@@ -1547,6 +1675,10 @@ PrefabInstance:
       propertyPath: upgradeAmountMultiplierViewController
       value: 
       objectReference: {fileID: 1186103543}
+    - target: {fileID: 5570389750213974011, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: upgradeAmountMultiplier
+      value: 
+      objectReference: {fileID: 754043762}
     - target: {fileID: 6860083772673712971, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.0009613037
@@ -1621,7 +1753,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1186103539 stripped
 RectTransform:
@@ -1856,6 +1988,10 @@ PrefabInstance:
       propertyPath: upgradeAmountMultiplierViewController
       value: 
       objectReference: {fileID: 1186103543}
+    - target: {fileID: 5570389750213974011, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: upgradeAmountMultiplier
+      value: 
+      objectReference: {fileID: 754043762}
     - target: {fileID: 6860083772673712971, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.0009613037
@@ -1889,6 +2025,10 @@ PrefabInstance:
       propertyPath: amountMultipliers.Array.data[3]
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3514526274595217769, guid: b6d101ce095ef6d4fbc2f06c56f3abe0, type: 3}
+      propertyPath: amountMultiplier
+      value: 
+      objectReference: {fileID: 524253390}
     - target: {fileID: 3514526274595217772, guid: b6d101ce095ef6d4fbc2f06c56f3abe0, type: 3}
       propertyPath: m_Name
       value: Amount Button
@@ -2345,6 +2485,10 @@ PrefabInstance:
       propertyPath: upgradeAmountMultiplierViewController
       value: 
       objectReference: {fileID: 1186103543}
+    - target: {fileID: 5570389750213974011, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: upgradeAmountMultiplier
+      value: 
+      objectReference: {fileID: 754043762}
     - target: {fileID: 6860083772673712971, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.0009613037
@@ -2590,7 +2734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4910789463967859542, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4910789463967859542, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2800,6 +2944,10 @@ PrefabInstance:
       propertyPath: upgradeAmountMultiplierViewController
       value: 
       objectReference: {fileID: 1186103543}
+    - target: {fileID: 5570389750213974011, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: upgradeAmountMultiplier
+      value: 
+      objectReference: {fileID: 754043762}
     - target: {fileID: 6860083772673712971, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.0009613037
@@ -2937,6 +3085,10 @@ PrefabInstance:
       propertyPath: upgradeAmountMultiplierViewController
       value: 
       objectReference: {fileID: 1186103543}
+    - target: {fileID: 5570389750213974011, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
+      propertyPath: upgradeAmountMultiplier
+      value: 
+      objectReference: {fileID: 754043762}
     - target: {fileID: 6860083772673712971, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.0009613037
@@ -3169,7 +3321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 733274359923524285, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 733274359923524285, guid: 26356d68e92a5fa4991ea268f68b7bee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3223,6 +3375,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1561094666}
     m_Modifications:
+    - target: {fileID: 3514526274595217769, guid: b6d101ce095ef6d4fbc2f06c56f3abe0, type: 3}
+      propertyPath: amountMultiplier
+      value: 
+      objectReference: {fileID: 754043762}
     - target: {fileID: 3514526274595217772, guid: b6d101ce095ef6d4fbc2f06c56f3abe0, type: 3}
       propertyPath: m_Name
       value: Upgrade Amount Button
@@ -3443,7 +3599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4910789463967859542, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4910789463967859542, guid: 406545480b0bad94d9bbce6a92a4a8de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
