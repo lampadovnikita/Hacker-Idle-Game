@@ -34,6 +34,8 @@ public class TradeViewController : MonoBehaviour
 
 		tradeAmountMultiplierViewController.OnAmountMultiplierChanged +=
 			(object sender, int newAmount) => UpdateTradeViewInfo();
+
+		UpdateTradeViewInfo();
 	}
 
 	public void OnTradeButtonPressed()
