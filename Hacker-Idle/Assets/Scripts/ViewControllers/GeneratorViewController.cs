@@ -27,7 +27,9 @@ public class GeneratorViewController : MonoBehaviour
 
 		generator.OnBeginProduce += (object sender) => UpdateRemainingTime();
 
-		generatorView.OnUpgradeButtonClicked += (object sender) => OnUpgradeButtonPressed();
+		generator.OnUpgraded += (object sender) => UpdateGeneratorViewInfo();
+
+		generatorView.OnUpgradeButtonClicked += (object sender) => AttemptUpgradeGenerator();
 
 		upgradeAmountMultiplier.OnAmountMultiplierChanged +=
 			(object sender) => OnUpgradeMultiplierChanged();
@@ -51,7 +53,7 @@ public class GeneratorViewController : MonoBehaviour
 		}
 	}
 
-	public void OnUpgradeButtonPressed()
+	public void AttemptUpgradeGenerator()
 	{
 		int amountOfUpgrades = upgradeAmountMultiplier.CurrentMultiplier;
 
@@ -60,8 +62,6 @@ public class GeneratorViewController : MonoBehaviour
 		if (isWritedOff == true)
 		{
 			generator.Upgrade(amountOfUpgrades);
-
-			UpdateGeneratorViewInfo();
 		}
 	}
 
