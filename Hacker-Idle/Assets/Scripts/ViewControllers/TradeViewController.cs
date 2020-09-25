@@ -3,32 +3,17 @@
 public class TradeViewController : MonoBehaviour
 {
 	[SerializeField]
+	private Trade trade = default;
+
+	[SerializeField]
 	private TradeView tradeView = default;
-
-	[SerializeField]
-	private FloatResourceCode sellResourceCode = default;
-
-	[SerializeField]
-	private float sellAmount = default;
-
-	[SerializeField]
-	private FloatResourceCode buyResourceCode = default;
-
-	[SerializeField]
-	private float buyAmount = default;
 
 	[SerializeField]
 	private AmountMultiplier tradeAmountMultiplier = default;
 
-	private FloatAccumulator sellAccumulator;
-	private FloatAccumulator buyAccumulator;
-
 	private void Start()
 	{
-		sellAccumulator = Player.Instance.GetFloatResourceAccumulator(sellResourceCode);
-		buyAccumulator = Player.Instance.GetFloatResourceAccumulator(buyResourceCode);
-
-		sellAccumulator.OnAmountChanged += (object sender) => UpdateTradeButtonInteractability();
+		trade.SellAccumulator.OnAmountChanged += (object sender) => UpdateTradeButtonInteractability();
 
 		tradeView.OnTradeButtonClicked += (object sender) => OnTradeButtonPressed();
 
@@ -40,26 +25,26 @@ public class TradeViewController : MonoBehaviour
 
 	public void OnTradeButtonPressed()
 	{
-		bool isWrittedOff = sellAccumulator.AttemptWriteOff(sellAmount *
+		bool isWrittedOff = trade.SellAccumulator.AttemptWriteOff(trade.SellAmount *
 			tradeAmountMultiplier.CurrentMultiplier);
 
 		if (isWrittedOff == true)
 		{
-			buyAccumulator.Deposit(buyAmount * tradeAmountMultiplier.CurrentMultiplier);
+			trade.BuyAccumulator.Deposit(trade.BuyAmount * tradeAmountMultiplier.CurrentMultiplier);
 		}
 	}
 
 	private void UpdateTradeViewInfo()
 	{
-		tradeView.SetBuyAmountText((buyAmount * tradeAmountMultiplier.CurrentMultiplier).ToString());
-		tradeView.SetSellAmountText((sellAmount * tradeAmountMultiplier.CurrentMultiplier).ToString());
+		tradeView.SetBuyAmountText((trade.BuyAmount * tradeAmountMultiplier.CurrentMultiplier).ToString());
+		tradeView.SetSellAmountText((trade.SellAmount * tradeAmountMultiplier.CurrentMultiplier).ToString());
 
 		UpdateTradeButtonInteractability();
 	}
 
 	private void UpdateTradeButtonInteractability()
 	{
-		if (sellAccumulator.Amount >= sellAmount * tradeAmountMultiplier.CurrentMultiplier)
+		if (trade.SellAccumulator.Amount >= trade.SellAmount * tradeAmountMultiplier.CurrentMultiplier)
 		{
 			tradeView.SetTradeButtonInteractability(true);
 		}
