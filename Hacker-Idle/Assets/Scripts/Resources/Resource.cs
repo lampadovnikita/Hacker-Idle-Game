@@ -14,7 +14,11 @@ public class Resource<T, C> : MonoBehaviour
 
 	private C accumulator;
 
+	#region Properties
 	public C Accumulator => accumulator;
+
+	public ResourceBaseData BaseData => baseData;
+	#endregion
 
 	private void Awake()
 	{

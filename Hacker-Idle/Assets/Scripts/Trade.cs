@@ -14,22 +14,13 @@ public class Trade : MonoBehaviour
 	[SerializeField]
 	private float buyAmount = default;
 
-	private FloatAccumulator sellAccumulator;
-	private FloatAccumulator buyAccumulator;
-
 	#region Properties
 	public float SellAmount => sellAmount;
 
 	public float BuyAmount => buyAmount;
 
-	public FloatAccumulator SellAccumulator => sellAccumulator;
+	public FloatAccumulator SellAccumulator => Player.Instance.GetResource(sellResourceCode).Accumulator;
 
-	public FloatAccumulator BuyAccumulator => buyAccumulator;
+	public FloatAccumulator BuyAccumulator => Player.Instance.GetResource(buyResourceCode).Accumulator;
 	#endregion
-
-	private void Start()
-	{
-		sellAccumulator = Player.Instance.GetFloatResourceAccumulator(sellResourceCode);
-		buyAccumulator = Player.Instance.GetFloatResourceAccumulator(buyResourceCode);
-	}
 }

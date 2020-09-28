@@ -5,18 +5,23 @@ public class HeaderViewController : MonoBehaviour
 	[SerializeField]
 	private HeaderView headerView = default;
 
-	private FloatAccumulator flopcoinSource;
+	private Resource<float, FloatAccumulator> flopcoin;
 
-	private FloatAccumulator informationSource;
+	private Resource<float, FloatAccumulator> information;
 
 	private void Start()
 	{
-		flopcoinSource = Player.Instance.FlopcoinAccumulator;
-		informationSource = Player.Instance.InformationAccumulator;
+		flopcoin = Player.Instance.GetResource(FloatResourceCode.Flopcoin);
+		information = Player.Instance.GetResource(FloatResourceCode.Information);
 
-		flopcoinSource.OnAmountChanged += (object sender) => UpdateFlopcoinAmountText();
+		headerView.FlopcoinView.SetIconSprite(flopcoin.BaseData.Icon);
+		headerView.InformationView.SetIconSprite(information.BaseData.Icon);
 
-		informationSource.OnAmountChanged += (object sender) => UpdateInformationAmountText();
+		flopcoin.Accumulator.OnAmountChanged +=
+			(object sender) => UpdateFlopcoinAmountText();
+
+		information.Accumulator.OnAmountChanged +=
+			(object sender) => UpdateInformationAmountText();
 
 		UpdateFlopcoinAmountText();
 		UpdateInformationAmountText();
@@ -24,11 +29,11 @@ public class HeaderViewController : MonoBehaviour
 
 	private void UpdateFlopcoinAmountText()
 	{
-		headerView.SetFlopcoinAmountText(FloatAccumulator.ToString(flopcoinSource.Amount));
+		headerView.FlopcoinView.SetAmountText(flopcoin.Accumulator.Amount.ToString());
 	}
 
 	private void UpdateInformationAmountText()
 	{
-		headerView.SetInformationAmountText(FloatAccumulator.ToString(informationSource.Amount));
+		headerView.InformationView.SetAmountText(information.Accumulator.Amount.ToString());
 	}
 }

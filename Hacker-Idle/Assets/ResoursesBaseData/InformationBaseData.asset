@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e020f7686a9a646b121b3fe9031b4a, type: 3}
   m_Name: InformationBaseData
   m_EditorClassIdentifier: 
-  resourceType: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a67d80a1e6dd824409cb30f62dc28448, type: 3}

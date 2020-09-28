@@ -5,5 +5,7 @@ using UnityEngine.UI;
 public class ResourceBaseData : ScriptableObject
 {
 	[SerializeField]
-	private Image icon = default;
+	private Sprite icon = default;
+
+	public Sprite Icon => icon;
 }

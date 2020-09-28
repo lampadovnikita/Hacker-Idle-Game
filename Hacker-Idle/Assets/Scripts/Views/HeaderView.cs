@@ -1,21 +1,16 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HeaderView : MonoBehaviour
 {
 	[SerializeField]
-	private TextMeshProUGUI flopcoinAmountUGUI = default;
+	private ResourceView flopcoinView = default;
 
 	[SerializeField]
-	private TextMeshProUGUI informationAmountUGUI = default;
+	private ResourceView informationView = default;
 
-	public void SetFlopcoinAmountText(string text)
-	{
-		flopcoinAmountUGUI.text = text;
-	}
+	#region Properties
+	public ResourceView FlopcoinView => flopcoinView;
 
-	public void SetInformationAmountText(string text)
-	{
-		informationAmountUGUI.text = text;
-	}
+	public ResourceView InformationView => informationView;
+	#endregion
 }
