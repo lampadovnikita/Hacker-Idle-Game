@@ -29,11 +29,11 @@ public class HeaderViewController : MonoBehaviour
 
 	private void UpdateFlopcoinAmountText()
 	{
-		headerView.FlopcoinView.SetAmountText(flopcoin.Accumulator.Amount.ToString());
+		headerView.FlopcoinView.SetAmountText(FloatAccumulator.ToString(flopcoin.Accumulator.Amount));
 	}
 
 	private void UpdateInformationAmountText()
 	{
-		headerView.InformationView.SetAmountText(information.Accumulator.Amount.ToString());
+		headerView.InformationView.SetAmountText(FloatAccumulator.ToString(information.Accumulator.Amount));
 	}
 }
