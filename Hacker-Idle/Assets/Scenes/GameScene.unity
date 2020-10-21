@@ -648,11 +648,11 @@ PrefabInstance:
     - target: {fileID: 5285665006725481974, guid: 75d9f8da921a2f34498c91b7a34f56a5, type: 3}
       propertyPath: sellResourceIconImage
       value: 
-      objectReference: {fileID: 295088108}
+      objectReference: {fileID: 0}
     - target: {fileID: 5285665006725481974, guid: 75d9f8da921a2f34498c91b7a34f56a5, type: 3}
       propertyPath: buyResourceIconImage
       value: 
-      objectReference: {fileID: 295088107}
+      objectReference: {fileID: 0}
     - target: {fileID: 5285665006725481981, guid: 75d9f8da921a2f34498c91b7a34f56a5, type: 3}
       propertyPath: m_Name
       value: Trade List Item
@@ -672,28 +672,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5285665006725481970, guid: 75d9f8da921a2f34498c91b7a34f56a5, type: 3}
   m_PrefabInstance: {fileID: 295088105}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &295088107 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5204193014638330193, guid: 75d9f8da921a2f34498c91b7a34f56a5, type: 3}
-  m_PrefabInstance: {fileID: 295088105}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &295088108 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3416945394783553995, guid: 75d9f8da921a2f34498c91b7a34f56a5, type: 3}
-  m_PrefabInstance: {fileID: 295088105}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &310622689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2411,8 +2389,6 @@ GameObject:
   - component: {fileID: 1504595186}
   - component: {fileID: 1504595188}
   - component: {fileID: 1504595187}
-  - component: {fileID: 1504595189}
-  - component: {fileID: 1504595190}
   m_Layer: 5
   m_Name: Header Resources info
   m_TagString: Untagged
@@ -2438,7 +2414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0018920898, y: 0}
+  m_AnchoredPosition: {x: -0.001953125, y: 0}
   m_SizeDelta: {x: 0.00390625, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504595187
@@ -2479,33 +2455,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504595185}
   m_CullTransparentMesh: 0
---- !u!114 &1504595189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504595185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 583f4c615c459b349b4e01f8d7f7f227, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flopcoinView: {fileID: 584489909455945462}
-  informationView: {fileID: 4340282857701115266}
---- !u!114 &1504595190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504595185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00f05f58194758240aef478e4ffa59bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  headerView: {fileID: 1504595189}
 --- !u!224 &1505116848 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3871965942934253137, guid: 2c0232a9ed2667245ad9f9a42cead3b2, type: 3}
@@ -3704,6 +3653,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1504595186}
     m_Modifications:
+    - target: {fileID: 4003848956078736180, guid: 80bfc21b70009bb45aaa15348e22c106, type: 3}
+      propertyPath: resourceCode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7692333822891546409, guid: 80bfc21b70009bb45aaa15348e22c106, type: 3}
       propertyPath: m_Name
       value: Information Resource Info
