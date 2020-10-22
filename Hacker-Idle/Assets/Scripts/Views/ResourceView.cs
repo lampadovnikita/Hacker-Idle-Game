@@ -15,6 +15,11 @@ public class ResourceView : MonoBehaviour
 		icon.sprite = sprite;
 	}
 
+	public void SetIconColor(Color color)
+	{
+		icon.color = color;
+	}
+
 	public void SetAmountText(string text)
 	{
 		amountUGUI.text = text;

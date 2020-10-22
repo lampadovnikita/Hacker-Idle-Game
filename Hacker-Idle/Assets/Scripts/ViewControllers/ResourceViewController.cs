@@ -18,6 +18,7 @@ public class ResourceViewController : MonoBehaviour
             (object sender) => UpdateResourceAmountText();
 
         resourceView.SetIconSprite(resource.BaseData.Icon);
+        resourceView.SetIconColor(resource.BaseData.IconColor);
 
         // Initial setup
         UpdateResourceAmountText();

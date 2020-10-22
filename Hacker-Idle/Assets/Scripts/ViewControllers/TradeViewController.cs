@@ -20,7 +20,10 @@ public class TradeViewController : MonoBehaviour
 		buyResource = Player.Instance.GetResource(trade.BuyResourceCoede);
 
 		tradeView.SellResourceView.SetIconSprite(sellResource.BaseData.Icon);
+		tradeView.SellResourceView.SetIconColor(sellResource.BaseData.IconColor);
+
 		tradeView.BuyResourceView.SetIconSprite(buyResource.BaseData.Icon);
+		tradeView.BuyResourceView.SetIconColor(buyResource.BaseData.IconColor);
 
 		sellResource.Accumulator.OnAmountChanged += (object sender) => UpdateTradeButtonInteractability();
 
