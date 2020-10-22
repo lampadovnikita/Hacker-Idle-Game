@@ -8,19 +8,19 @@ public class TradeView : MonoBehaviour
 	public event TradeButtonClicked OnTradeButtonClicked;
 
 	[SerializeField]
-	private Image sellResourceIconImage = default;
+	private ResourceView sellResourceView = default;
 
 	[SerializeField]
-	private TextMeshProUGUI sellAmountUGUI = default;
-
-	[SerializeField]
-	private Image buyResourceIconImage = default;
-
-	[SerializeField]
-	private TextMeshProUGUI buyAmountUGUI = default;
+	private ResourceView buyResourceView = default;
 
 	[SerializeField]
 	private Button tradeButton = default;
+
+	#region Properties
+	public ResourceView SellResourceView => sellResourceView;
+
+	public ResourceView BuyResourceView => buyResourceView;
+	#endregion
 
 	private void Awake()
 	{
@@ -28,16 +28,6 @@ public class TradeView : MonoBehaviour
 		(
 			() => OnTradeButtonClicked?.Invoke(this)
 		);
-	}
-
-	public void SetSellAmountText(string text)
-	{
-		sellAmountUGUI.text = text;
-	}
-
-	public void SetBuyAmountText(string text)
-	{
-		buyAmountUGUI.text = text;
 	}
 
 	public void SetTradeButtonInteractability(bool isInteractable)

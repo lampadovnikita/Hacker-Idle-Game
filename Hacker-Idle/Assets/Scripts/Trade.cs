@@ -16,11 +16,9 @@ public class Trade : MonoBehaviour
 
 	#region Properties
 	public float SellAmount => sellAmount;
-
 	public float BuyAmount => buyAmount;
 
-	public FloatAccumulator SellAccumulator => Player.Instance.GetResource(sellResourceCode).Accumulator;
-
-	public FloatAccumulator BuyAccumulator => Player.Instance.GetResource(buyResourceCode).Accumulator;
+	public FloatResourceCode SellResourceCoede => sellResourceCode;
+	public FloatResourceCode BuyResourceCoede => buyResourceCode;
 	#endregion
 }
