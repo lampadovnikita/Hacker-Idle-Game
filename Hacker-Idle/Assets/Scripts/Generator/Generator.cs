@@ -1,7 +1,7 @@
 ﻿using UnityEditor.UIElements;
 using UnityEngine;
 
-public class Generator : MonoBehaviour
+public class Generator : MonoBehaviour, ISaveable
 {
 	// To see the formulas for calculating the cost of an upgrade
 	// and the amount of resources produced see the comments to the methods:
@@ -78,6 +78,22 @@ public class Generator : MonoBehaviour
 	private void OnValidate()
 	{
 		Validator.ValidateNonNegative(ref level);
+	}
+
+	public object CaptureState()
+	{
+		return new GeneratorSaveData
+		{
+			Level = level
+		};
+	}
+
+	public void RestoreState(object state)
+	{
+		GeneratorSaveData saveData = (GeneratorSaveData)state;
+
+		level = 0;
+		Upgrade(saveData.Level);
 	}
 
 	public void Upgrade(int levelsAmount)
